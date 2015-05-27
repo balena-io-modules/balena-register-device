@@ -5,28 +5,11 @@ expect = chai.expect
 sinon = require('sinon')
 chai.use(require('sinon-chai'))
 chai.use(require('chai-as-promised'))
-errors = require('resin-errors')
 register = require('../lib/register')
 
 describe 'Device Register:', ->
 
 	describe '.register()', ->
-
-		it 'should throw if no pine instance', ->
-			expect ->
-				register.register null,
-					userId: 199
-					applicationId: 10350
-					deviceType: 'raspberry-pi'
-					uuid: 'asdf'
-					apiKey: 'asdf'
-				, _.noop
-			.to.throw(errors.ResinMissingParameter)
-
-		it 'should throw if no options', ->
-			expect ->
-				register.register({}, null, _.noop)
-			.to.throw(errors.ResinMissingParameter)
 
 		describe 'given the post operation is unsuccessful', ->
 

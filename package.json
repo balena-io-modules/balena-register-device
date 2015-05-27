@@ -37,7 +37,6 @@
     "sinon-chai": "~2.7.0"
   },
   "dependencies": {
-    "lodash": "^3.5.0",
-    "resin-errors": "^1.0.1"
+    "lodash": "^3.5.0"
   }
 }

@@ -1,5 +1,4 @@
 _ = require('lodash')
-errors = require('resin-errors')
 crypto = require('./crypto')
 
 ###*
@@ -32,13 +31,6 @@ crypto = require('./crypto')
 #		console.log(device)
 ###
 exports.register = (pineInstance, options, callback) ->
-
-	if not pineInstance?
-		throw new errors.ResinMissingParameter('pine instance')
-
-	if not options?
-		throw new errors.ResinMissingParameter('options')
-
 	pineInstance.post
 		resource: 'device'
 		body:

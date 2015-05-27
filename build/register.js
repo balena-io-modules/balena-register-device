@@ -1,8 +1,6 @@
-var crypto, errors, _;
+var crypto, _;
 
 _ = require('lodash');
-
-errors = require('resin-errors');
 
 crypto = require('./crypto');
 
@@ -38,12 +36,6 @@ crypto = require('./crypto');
  */
 
 exports.register = function(pineInstance, options, callback) {
-  if (pineInstance == null) {
-    throw new errors.ResinMissingParameter('pine instance');
-  }
-  if (options == null) {
-    throw new errors.ResinMissingParameter('options');
-  }
   return pineInstance.post({
     resource: 'device',
     body: {
