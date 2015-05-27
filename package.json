@@ -34,7 +34,7 @@
     "gulp-util": "~3.0.1",
     "mocha": "~2.0.1",
     "sinon": "~1.12.2",
-    "sinon-chai": "~2.6.0"
+    "sinon-chai": "~2.7.0"
   },
   "dependencies": {
     "lodash": "^3.5.0",
