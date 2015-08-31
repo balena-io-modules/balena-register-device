@@ -63,7 +63,5 @@ exports.register = function(pineInstance, options, callback) {
     customOptions: {
       apikey: options.apiKey
     }
-  }).then(function(data) {
-    return _.pick(data, 'id', 'uuid');
   }).nodeify(callback);
 };

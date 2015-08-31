@@ -61,8 +61,5 @@ exports.register = (pineInstance, options, callback) ->
 		customOptions:
 			apikey: options.apiKey
 
-	.then (data) ->
-		return _.pick(data, 'id', 'uuid')
-
 	# Allow promise based and callback based styles
 	.nodeify(callback)

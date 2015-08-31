@@ -70,7 +70,7 @@ describe 'Device Register:', ->
 						uuid: 'asdf'
 						apiKey: 'asdf'
 
-			it 'should return the resulting uuid and id', (done) ->
+			it 'should return the resulting device', (done) ->
 				register.register @pineInstance,
 					userId: 199
 					applicationId: 10350
@@ -81,10 +81,14 @@ describe 'Device Register:', ->
 					expect(error).to.not.exist
 					expect(device).to.deep.equal
 						id: 999
+						userId: 199
+						applicationId: 10350
+						deviceType: 'raspberry-pi'
 						uuid: 'asdf'
+						apiKey: 'asdf'
 					done()
 
-			it 'should return a promise that resolves the uuid and id if no callback', ->
+			it 'should return a promise that resolves the device if no callback', ->
 				promise = register.register @pineInstance,
 					userId: 199
 					applicationId: 10350
@@ -94,7 +98,11 @@ describe 'Device Register:', ->
 
 				expect(promise).to.eventually.deep.equal
 					id: 999
+					userId: 199
+					applicationId: 10350
+					deviceType: 'raspberry-pi'
 					uuid: 'asdf'
+					apiKey: 'asdf'
 
 			describe 'given a explicit uuid', ->
 
