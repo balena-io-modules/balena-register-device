@@ -44,7 +44,7 @@ exports.generateUUID = function() {
  * deviceRegister.register pine,
  *		userId: 199
  *		applicationId: 10350
- *		device_type: 'raspberry-pi'
+ *		deviceType: 'raspberry-pi'
  *		apiKey: '...'
  *	, (error, device) ->
  *		throw error if error?
