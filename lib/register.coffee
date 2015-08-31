@@ -4,7 +4,7 @@ crypto = require('crypto')
 ###*
 # @summary Generate a device UUID
 # @function
-# @protected
+# @public
 #
 # @returns {String} A generated UUID
 #
