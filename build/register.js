@@ -17,7 +17,7 @@ crypto = require('crypto');
  */
 
 exports.generateUUID = function() {
-  return crypto.pseudoRandomBytes(31).toString('hex');
+  return crypto.randomBytes(31).toString('hex');
 };
 
 
