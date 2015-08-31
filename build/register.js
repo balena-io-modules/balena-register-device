@@ -58,7 +58,8 @@ exports.register = function(pineInstance, options, callback) {
       user: options.userId,
       application: options.applicationId,
       uuid: options.uuid || exports.generateUUID(),
-      device_type: options.deviceType
+      device_type: options.deviceType,
+      registered_at: Math.floor(Date.now() / 1000)
     },
     customOptions: {
       apikey: options.apiKey

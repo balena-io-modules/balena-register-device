@@ -58,6 +58,7 @@ exports.register = (pineInstance, options, callback) ->
 			application: options.applicationId
 			uuid: options.uuid or exports.generateUUID()
 			device_type: options.deviceType
+			registered_at: Math.floor(Date.now() / 1000)
 		customOptions:
 			apikey: options.apiKey
 
