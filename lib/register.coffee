@@ -19,7 +19,7 @@ exports.generateUUID = ->
 	# pass the certificate validation in OpenVPN This either means that
 	# the RFC counts a final NULL byte as part of the CN or that the
 	# OpenVPN/OpenSSL implementation has a bug.
-	return crypto.pseudoRandomBytes(31).toString('hex')
+	return crypto.randomBytes(31).toString('hex')
 
 ###*
 # @summary Register a device with Resin.io
