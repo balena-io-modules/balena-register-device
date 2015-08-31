@@ -2,7 +2,23 @@ var crypto, _;
 
 _ = require('lodash');
 
-crypto = require('./crypto');
+crypto = require('crypto');
+
+
+/**
+ * @summary Generate a device UUID
+ * @function
+ * @protected
+ *
+ * @returns {String} A generated UUID
+ *
+ * @example
+ * uuid = register.generateUUID()
+ */
+
+exports.generateUUID = function() {
+  return crypto.pseudoRandomBytes(31).toString('hex');
+};
 
 
 /**
@@ -41,7 +57,7 @@ exports.register = function(pineInstance, options, callback) {
     body: {
       user: options.userId,
       application: options.applicationId,
-      uuid: options.uuid || crypto.generateUUID(),
+      uuid: options.uuid || exports.generateUUID(),
       device_type: options.deviceType
     },
     customOptions: {
