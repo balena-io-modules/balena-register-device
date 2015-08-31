@@ -27,7 +27,7 @@ Generate a random UUID.
 Example:
 
 ```coffee
-deviceRegister = require('resin-device-register')
+deviceRegister = require('resin-register-device')
 uuid = deviceRegister.generateUUID()
 ```
 
@@ -52,7 +52,7 @@ The `callback` gets called with two arguments: `(error, device)`, where `device`
 Example:
 
 ```coffee
-deviceRegister = require('resin-device-register')
+deviceRegister = require('resin-register-device')
 pine = require('resin-pine')
 
 deviceRegister.register pine,
