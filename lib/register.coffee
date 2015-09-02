@@ -13,8 +13,8 @@ crypto = require('crypto')
 # @param {Function} callback - callback (error, uuid)
 #
 # @example
-# deviceRegister.generateUUID (err, uuid) ->
-# 	throw err if err?
+# deviceRegister.generateUUID (error, uuid) ->
+# 	throw error if error?
 #	# uuid is a generated UUID that can be used for registering
 # 	console.log(uuid)
 ###
@@ -29,8 +29,7 @@ exports.generateUUID = (callback) ->
 	Promise.try ->
 		crypto.randomBytes(31).toString('hex')
 	.catch ->
-		Promise.delay(1).then ->
-			exports.generateUUID()
+		Promise.delay(1).then(exports.generateUUID)
 	.nodeify(callback)
 
 ###*
@@ -64,7 +63,7 @@ exports.generateUUID = (callback) ->
 ###
 exports.register = (pineInstance, options, callback) ->
 	Promise.try ->
-		options.uuid or exports.generateUUID()
+		return options.uuid or exports.generateUUID()
 	.then (uuid) ->
 		pineInstance.post
 			resource: 'device'

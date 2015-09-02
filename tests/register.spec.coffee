@@ -6,26 +6,37 @@ sinon = require('sinon')
 chai.use(require('sinon-chai'))
 chai.use(require('chai-as-promised'))
 register = require('../lib/register')
+crypto = require('crypto')
 
 describe 'Device Register:', ->
 
 	describe '.generateUUID()', ->
 
 		it 'should return a string in its callback', (done) ->
-			register.generateUUID (err, uuid) ->
+			register.generateUUID (error, uuid) ->
+				expect(error).to.not.exist
 				expect(uuid).to.be.a('string')
 				done()
 
-		it 'should return a string if called in Promise mode', (done) ->
-			register.generateUUID()
-			.then (uuid) ->
-				expect(uuid).to.be.a('string')
-				done()
+		it 'should return a string if called in Promise mode', ->
+			expect(register.generateUUID()).to.eventually.be.a('string')
 
-		it 'should have a length of 62 (31 bytes)', (done) ->
-			register.generateUUID (err, uuid) ->
-				expect(uuid).to.have.length(62)
-				done()
+		it 'should return a string even if randomBytes throws a few times', (done) ->
+			sinon.stub crypto, 'randomBytes', do ->
+				_nCalls = 0
+				return (length) ->
+					_nCalls += 1
+					if _nCalls < 3
+						throw new Error('Not enough entropy')
+					return crypto.pseudoRandomBytes(length)
+			finish = (err) ->
+				crypto.randomBytes.restore()
+				done(err)
+
+			expect(register.generateUUID()).to.eventually.be.a('string').notify(finish)
+
+		it 'should have a length of 62 (31 bytes)', ->
+			expect(register.generateUUID()).to.eventually.have.length(62)
 
 		it 'should generate different uuids each time', (done) ->
 			Promise.all([
@@ -36,7 +47,7 @@ describe 'Device Register:', ->
 				expect(uuid1).to.not.equal(uuid2)
 				expect(uuid2).to.not.equal(uuid3)
 				expect(uuid3).to.not.equal(uuid1)
-				done()
+			.nodeify(done)
 
 	describe '.register()', ->
 
@@ -125,7 +136,8 @@ describe 'Device Register:', ->
 						deviceType: 'raspberry-pi'
 						uuid: 'asdf'
 						apiKey: 'asdf'
-					, ->
+					, (error) ->
+						expect(error).to.not.exist
 						expect(postSpy).to.have.been.calledOnce
 						expect(postSpy.args[0][0].body.uuid).to.equal('asdf')
 						postSpy.restore()
@@ -141,7 +153,8 @@ describe 'Device Register:', ->
 						applicationId: 10350
 						deviceType: 'raspberry-pi'
 						apiKey: 'asdf'
-					, ->
+					, (error) ->
+						expect(error).to.not.exist
 						expect(postSpy).to.have.been.calledOnce
 						expect(postSpy.args[0][0].body.uuid).to.exist
 						expect(postSpy.args[0][0].body.uuid).to.have.length(62)
