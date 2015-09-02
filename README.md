@@ -20,7 +20,7 @@ $ npm install --save resin-register-device
 Documentation
 -------------
 
-### String deviceRegister.generateUUID()
+### deviceRegister.generateUUID(Function callback)
 
 Generate a random UUID.
 
