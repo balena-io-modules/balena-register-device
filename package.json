@@ -23,7 +23,6 @@
   "author": "Juan Cruz Viotti <juanchiviotti@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bluebird": "^2.9.26",
     "chai": "^2.3.0",
     "chai-as-promised": "^5.0.0",
     "coffee-script": "~1.8.0",
@@ -37,6 +36,7 @@
     "sinon-chai": "~2.7.0"
   },
   "dependencies": {
+    "bluebird": "^2.9.26",
     "lodash": "^3.5.0"
   }
 }

@@ -11,22 +11,32 @@ describe 'Device Register:', ->
 
 	describe '.generateUUID()', ->
 
-		it 'should return a string', ->
-			uuid = register.generateUUID()
-			expect(uuid).to.be.a('string')
+		it 'should return a string in its callback', (done) ->
+			register.generateUUID (err, uuid) ->
+				expect(uuid).to.be.a('string')
+				done()
 
-		it 'should have a length of 62 (31 bytes)', ->
-			uuid = register.generateUUID()
-			expect(uuid).to.have.length(62)
+		it 'should return a string if called in Promise mode', (done) ->
+			register.generateUUID()
+			.then (uuid) ->
+				expect(uuid).to.be.a('string')
+				done()
 
-		it 'should generate different uuids each time', ->
-			uuid1 = register.generateUUID()
-			uuid2 = register.generateUUID()
-			uuid3 = register.generateUUID()
+		it 'should have a length of 62 (31 bytes)', (done) ->
+			register.generateUUID (err, uuid) ->
+				expect(uuid).to.have.length(62)
+				done()
 
-			expect(uuid1).to.not.equal(uuid2)
-			expect(uuid2).to.not.equal(uuid3)
-			expect(uuid3).to.not.equal(uuid1)
+		it 'should generate different uuids each time', (done) ->
+			Promise.all([
+				register.generateUUID()
+				register.generateUUID()
+				register.generateUUID()
+			]).then ([ uuid1, uuid2, uuid3 ]) ->
+				expect(uuid1).to.not.equal(uuid2)
+				expect(uuid2).to.not.equal(uuid3)
+				expect(uuid3).to.not.equal(uuid1)
+				done()
 
 	describe '.register()', ->
 
@@ -106,7 +116,7 @@ describe 'Device Register:', ->
 
 			describe 'given a explicit uuid', ->
 
-				it 'should call pineInstance.post() with that uuid', ->
+				it 'should call pineInstance.post() with that uuid', (done) ->
 					postSpy = sinon.spy(@pineInstance, 'post')
 
 					register.register @pineInstance,
@@ -115,15 +125,15 @@ describe 'Device Register:', ->
 						deviceType: 'raspberry-pi'
 						uuid: 'asdf'
 						apiKey: 'asdf'
-					, _.noop
-
-					expect(postSpy).to.have.been.calledOnce
-					expect(postSpy.args[0][0].body.uuid).to.equal('asdf')
-					postSpy.restore()
+					, ->
+						expect(postSpy).to.have.been.calledOnce
+						expect(postSpy.args[0][0].body.uuid).to.equal('asdf')
+						postSpy.restore()
+						done()
 
 			describe 'given no uuid', ->
 
-				it 'should call pineInstance.post() with a generated uuid', ->
+				it 'should call pineInstance.post() with a generated uuid', (done) ->
 					postSpy = sinon.spy(@pineInstance, 'post')
 
 					register.register @pineInstance,
@@ -131,9 +141,9 @@ describe 'Device Register:', ->
 						applicationId: 10350
 						deviceType: 'raspberry-pi'
 						apiKey: 'asdf'
-					, _.noop
-
-					expect(postSpy).to.have.been.calledOnce
-					expect(postSpy.args[0][0].body.uuid).to.exist
-					expect(postSpy.args[0][0].body.uuid).to.have.length(62)
-					postSpy.restore()
+					, ->
+						expect(postSpy).to.have.been.calledOnce
+						expect(postSpy.args[0][0].body.uuid).to.exist
+						expect(postSpy.args[0][0].body.uuid).to.have.length(62)
+						postSpy.restore()
+						done()
