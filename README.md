@@ -24,11 +24,14 @@ Documentation
 
 Generate a random UUID.
 
-Example:
+**Notice**: You can use this function as a promise if you omit the `callback` argument.
 
+Example:
 ```coffee
-deviceRegister = require('resin-register-device')
-uuid = deviceRegister.generateUUID()
+deviceRegister.generateUUID (error, uuid) ->
+	throw error if error?
+	# uuid is a generated UUID that can be used for registering
+	console.log(uuid)
 ```
 
 ### deviceRegister.register(Object pineInstance, Object options, Function callback)
