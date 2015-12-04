@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.1] - 2015-12-04
+
+### Changed
+
+- Omit tests in NPM package.
+
 ## [2.0.0] - 2015-09-02
 
 ### Changed
@@ -27,6 +33,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Do not throw sync exceptions on argument expectations.
 
+[2.0.1]: https://github.com/resin-io/resin-register-device/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/resin-io/resin-register-device/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/resin-io/resin-register-device/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/resin-io/resin-register-device/compare/v1.0.0...v1.0.1
