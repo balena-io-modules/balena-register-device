@@ -21,7 +21,7 @@
     "prepublish": "gulp build"
   },
   "author": "Juan Cruz Viotti <juan@resin.io>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "chai": "^2.3.0",
     "chai-as-promised": "^5.0.0",
