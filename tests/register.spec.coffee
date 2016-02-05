@@ -6,7 +6,6 @@ sinon = require('sinon')
 chai.use(require('sinon-chai'))
 chai.use(require('chai-as-promised'))
 register = require('../lib/register')
-crypto = require('crypto')
 
 describe 'Device Register:', ->
 
@@ -18,28 +17,8 @@ describe 'Device Register:', ->
 				expect(uuid).to.be.a('string')
 				done()
 
-		it 'should return a string if called in Promise mode', ->
+		it 'should eventually be a string', ->
 			expect(register.generateUUID()).to.eventually.be.a('string')
-
-		it 'should not retry if there is an error other than "not enough entropy"', ->
-			stub = sinon.stub(crypto, 'randomBytes')
-			stub.throws(new Error('Unknown error'))
-			expect(register.generateUUID()).to.be.rejectedWith('Unknown error')
-			stub.restore()
-
-		it 'should return a string even if randomBytes throws a few times', (done) ->
-			sinon.stub crypto, 'randomBytes', do ->
-				_nCalls = 0
-				return (length) ->
-					_nCalls += 1
-					if _nCalls < 3
-						throw new Error('Not enough entropy')
-					return crypto.pseudoRandomBytes(length)
-			finish = (err) ->
-				crypto.randomBytes.restore()
-				done(err)
-
-			expect(register.generateUUID()).to.eventually.be.a('string').notify(finish)
 
 		it 'should have a length of 62 (31 bytes)', ->
 			expect(register.generateUUID()).to.eventually.have.length(62)

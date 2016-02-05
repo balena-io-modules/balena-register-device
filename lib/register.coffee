@@ -16,7 +16,6 @@ limitations under the License.
 
 Promise = require('bluebird')
 _ = require('lodash')
-crypto = require('crypto')
 
 ###*
 # @summary Generate a device UUID
@@ -43,11 +42,9 @@ exports.generateUUID = (callback) ->
 	# the RFC counts a final NULL byte as part of the CN or that the
 	# OpenVPN/OpenSSL implementation has a bug.
 	Promise.try ->
-		crypto.randomBytes(31).toString('hex')
-	.catch (error) ->
-		if error.message is 'Not enough entropy'
-			return Promise.delay(1).then(exports.generateUUID)
-		throw error
+		return _.map _.range(62), ->
+			return Math.floor(Math.random() * 16).toString(16)
+		.join('')
 	.nodeify(callback)
 
 ###*
