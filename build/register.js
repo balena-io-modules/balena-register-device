@@ -43,8 +43,11 @@ crypto = require('crypto');
 exports.generateUUID = function(callback) {
   return Promise["try"](function() {
     return crypto.randomBytes(31).toString('hex');
-  })["catch"](function() {
-    return Promise.delay(1).then(exports.generateUUID);
+  })["catch"](function(error) {
+    if (error.message === 'Not enough entropy') {
+      return Promise.delay(1).then(exports.generateUUID);
+    }
+    throw error;
   }).nodeify(callback);
 };
 
