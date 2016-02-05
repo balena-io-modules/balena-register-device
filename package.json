@@ -31,7 +31,9 @@
     "gulp-coffeelint": "~0.4.0",
     "gulp-mocha": "~2.0.0",
     "gulp-util": "~3.0.1",
+    "karma": "^0.13.19",
     "mocha": "~2.0.1",
+    "resin-config-karma": "^1.0.1",
     "sinon": "~1.12.2",
     "sinon-chai": "~2.7.0"
   },

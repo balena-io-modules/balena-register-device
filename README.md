@@ -1,14 +1,14 @@
 resin-register-device
----------------------
+=====================
+
+> Resin.io device registration utilities.
 
 [![npm version](https://badge.fury.io/js/resin-register-device.svg)](http://badge.fury.io/js/resin-register-device)
-[![dependencies](https://david-dm.org/resin-io/resin-register-device.png)](https://david-dm.org/resin-io/resin-register-device.png)
+[![dependencies](https://david-dm.org/resin-io/resin-register-device.svg)](https://david-dm.org/resin-io/resin-register-device.svg)
 [![Build Status](https://travis-ci.org/resin-io/resin-register-device.svg?branch=master)](https://travis-ci.org/resin-io/resin-register-device)
 [![Build status](https://ci.appveyor.com/api/projects/status/uh8bg45pxxyx2qif?svg=true)](https://ci.appveyor.com/project/jviotti/resin-register-device)
-
-Join our online chat at [![Gitter chat](https://badges.gitter.im/resin-io/chat.png)](https://gitter.im/resin-io/chat)
-
-Resin.io device registration utilities.
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/resin-io/chat)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/resin-register-dev.svg)](https://saucelabs.com/u/resin-register-dev)
 
 Installation
 ------------
