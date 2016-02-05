@@ -21,6 +21,12 @@ describe 'Device Register:', ->
 		it 'should return a string if called in Promise mode', ->
 			expect(register.generateUUID()).to.eventually.be.a('string')
 
+		it 'should not retry if there is an error other than "not enough entropy"', ->
+			stub = sinon.stub(crypto, 'randomBytes')
+			stub.throws(new Error('Unknown error'))
+			expect(register.generateUUID()).to.be.rejectedWith('Unknown error')
+			stub.restore()
+
 		it 'should return a string even if randomBytes throws a few times', (done) ->
 			sinon.stub crypto, 'randomBytes', do ->
 				_nCalls = 0

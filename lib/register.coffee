@@ -44,8 +44,10 @@ exports.generateUUID = (callback) ->
 	# OpenVPN/OpenSSL implementation has a bug.
 	Promise.try ->
 		crypto.randomBytes(31).toString('hex')
-	.catch ->
-		Promise.delay(1).then(exports.generateUUID)
+	.catch (error) ->
+		if error.message is 'Not enough entropy'
+			return Promise.delay(1).then(exports.generateUUID)
+		throw error
 	.nodeify(callback)
 
 ###*
