@@ -14,13 +14,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  */
-var Promise, crypto, _;
+var Promise, _;
 
 Promise = require('bluebird');
 
 _ = require('lodash');
-
-crypto = require('crypto');
 
 
 /**
@@ -42,12 +40,9 @@ crypto = require('crypto');
 
 exports.generateUUID = function(callback) {
   return Promise["try"](function() {
-    return crypto.randomBytes(31).toString('hex');
-  })["catch"](function(error) {
-    if (error.message === 'Not enough entropy') {
-      return Promise.delay(1).then(exports.generateUUID);
-    }
-    throw error;
+    return _.map(_.range(62), function() {
+      return Math.floor(Math.random() * 16).toString(16);
+    }).join('');
   }).nodeify(callback);
 };
 
