@@ -62,6 +62,7 @@ exports.generateUUID = function(callback) {
  * @param {String} options.deviceType - device type
  * @param {String} options.apiKey - api key
  * @param {String} [options.uuid] - device uuid
+ * @param {String} [options.apiPrefix] - api prefix
  * @param {Function} callback - callback (error, device)
  *
  * @example
@@ -82,6 +83,7 @@ exports.register = function(pineInstance, options, callback) {
     return options.uuid || exports.generateUUID();
   }).then(function(uuid) {
     return pineInstance.post({
+      apiPrefix: options.apiPrefix,
       resource: 'device',
       body: {
         user: options.userId,

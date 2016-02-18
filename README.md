@@ -51,6 +51,7 @@ The `options` object requires the following properties:
 - `String deviceType`: The device type slug.
 - `String apiKey`: The API key.
 - `[String uuid]`: The uuid. Notice this property is optional, and it will be generated if absent.
+- `[String apiPrefix]`: The API prefix. Notice this property is optional, and it will use the one from the passed pine instance if absent.
 
 The `callback` gets called with two arguments: `(error, device)`, where `device` is an object containing two properties: an `id` and the `uuid`.
 
