@@ -3,10 +3,10 @@
   "version": "2.1.0",
   "description": "Resin.io device registration utilities",
   "main": "build/register.js",
-  "homepage": "https://github.com/resin-io/resin-register-device",
+  "homepage": "https://github.com/resin-io-modules/resin-register-device",
   "repository": {
     "type": "git",
-    "url": "git://github.com/resin-io/resin-register-device.git"
+    "url": "git://github.com/resin-io-modules/resin-register-device.git"
   },
   "keywords": [
     "resin",
