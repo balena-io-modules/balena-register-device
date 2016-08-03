@@ -1,5 +1,4 @@
 Promise = require('bluebird')
-_ = require('lodash')
 chai = require('chai')
 expect = chai.expect
 sinon = require('sinon')
