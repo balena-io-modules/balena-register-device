@@ -77,7 +77,7 @@ Tests
 Run the test suite by doing:
 
 ```sh
-$ gulp test
+$ npm test
 ```
 
 Contribute
@@ -89,7 +89,7 @@ Contribute
 Before submitting a PR, please make sure that you include tests, and that [coffeelint](http://www.coffeelint.org/) runs without any warning:
 
 ```sh
-$ gulp lint
+$ npm run lint
 ```
 
 Support

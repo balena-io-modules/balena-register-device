@@ -5,7 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Switched to using the standardised resin-lint module for linting.
+- Updated dependencies and optimize for SDK browser build.
+- Switched to using the standardized resin-lint module for linting.
 
 ## [2.1.0] - 2016-02-18
 

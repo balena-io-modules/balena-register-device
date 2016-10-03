@@ -15,7 +15,7 @@ limitations under the License.
 ###
 
 Promise = require('bluebird')
-_ = require('lodash')
+range = require('lodash/range')
 
 ###*
 # @summary Generate a device UUID
@@ -42,10 +42,10 @@ exports.generateUUID = (callback) ->
 	# the RFC counts a final NULL byte as part of the CN or that the
 	# OpenVPN/OpenSSL implementation has a bug.
 	Promise.try ->
-		return _.map _.range(62), ->
-			return Math.floor(Math.random() * 16).toString(16)
+		return range(62).map ->
+			Math.floor(Math.random() * 16).toString(16)
 		.join('')
-	.nodeify(callback)
+	.asCallback(callback)
 
 ###*
 # @summary Register a device with Resin.io
@@ -93,4 +93,4 @@ exports.register = (pineInstance, options, callback) ->
 			customOptions:
 				apikey: options.apiKey
 	# Allow promise based and callback based styles
-	.nodeify(callback)
+	.asCallback(callback)

@@ -16,13 +16,15 @@ describe 'Device Register:', ->
 				expect(uuid).to.be.a('string')
 				done()
 
+			return
+
 		it 'should eventually be a string', ->
 			expect(register.generateUUID()).to.eventually.be.a('string')
 
 		it 'should have a length of 62 (31 bytes)', ->
 			expect(register.generateUUID()).to.eventually.have.length(62)
 
-		it 'should generate different uuids each time', (done) ->
+		it 'should generate different uuids each time', ->
 			Promise.all([
 				register.generateUUID()
 				register.generateUUID()
@@ -31,7 +33,6 @@ describe 'Device Register:', ->
 				expect(uuid1).to.not.equal(uuid2)
 				expect(uuid2).to.not.equal(uuid3)
 				expect(uuid3).to.not.equal(uuid1)
-			.nodeify(done)
 
 	describe '.register()', ->
 
@@ -53,6 +54,8 @@ describe 'Device Register:', ->
 					expect(error).to.equal(@error)
 					expect(device).to.not.exist
 					done()
+
+				return
 
 			it 'should return a rejected promise if no callback', ->
 				promise = register.register @pineInstance,
@@ -93,6 +96,8 @@ describe 'Device Register:', ->
 						apiKey: 'asdf'
 					done()
 
+				return
+
 			it 'should return a promise that resolves the device if no callback', ->
 				promise = register.register @pineInstance,
 					userId: 199
@@ -127,6 +132,8 @@ describe 'Device Register:', ->
 						postSpy.restore()
 						done()
 
+					return
+
 			describe 'given no uuid', ->
 
 				it 'should call pineInstance.post() with a generated uuid', (done) ->
@@ -144,3 +151,5 @@ describe 'Device Register:', ->
 						expect(postSpy.args[0][0].body.uuid).to.have.length(62)
 						postSpy.restore()
 						done()
+
+					return

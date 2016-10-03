@@ -14,11 +14,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  */
-var Promise, _;
+var Promise, range;
 
 Promise = require('bluebird');
 
-_ = require('lodash');
+range = require('lodash/range');
 
 
 /**
@@ -40,10 +40,10 @@ _ = require('lodash');
 
 exports.generateUUID = function(callback) {
   return Promise["try"](function() {
-    return _.map(_.range(62), function() {
+    return range(62).map(function() {
       return Math.floor(Math.random() * 16).toString(16);
     }).join('');
-  }).nodeify(callback);
+  }).asCallback(callback);
 };
 
 
@@ -96,5 +96,5 @@ exports.register = function(pineInstance, options, callback) {
         apikey: options.apiKey
       }
     });
-  }).nodeify(callback);
+  }).asCallback(callback);
 };
