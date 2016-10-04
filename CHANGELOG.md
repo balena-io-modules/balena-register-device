@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+- Changed `register()` to work with the new device registration flow.
+- Changed `generateUUID()` to `generateUniqueKey()` to reflect that it should now be used for both generating a uuid and an api key.
+
 ## [2.1.1] - 2016-10-03
 
 ### Changed

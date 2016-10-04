@@ -1,155 +1,100 @@
-Promise = require('bluebird')
+requestMock = require 'requestmock'
+mockery = require 'mockery'
+
+requestMock.log(false)
+mockery.enable(warnOnUnregistered: false)
+mockery.registerMock('request', requestMock)
+
+API_ENDPOINT = 'https://api.resin.io'
+
+_ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
-sinon = require('sinon')
-chai.use(require('sinon-chai'))
 chai.use(require('chai-as-promised'))
 register = require('../lib/register')
 
+requestMock.register 'post', "#{API_ENDPOINT}/device/register", ({ body: { user } }, cb) ->
+	switch user
+		when 1
+			cb(null, statusCode: 401, 'Unauthorized')
+		when 2
+			cb(null, statusCode: 201, {
+				id: 999
+			})
+		else
+			throw new Error("Unrecognised user for mocking '#{user}'")
+
 describe 'Device Register:', ->
+	describe '.generateUniqueKey()', ->
 
-	describe '.generateUUID()', ->
+		it 'should return a string that has a length of 62 (31 bytes)', ->
+			uniqueKey = register.generateUniqueKey()
+			expect(uniqueKey).to.be.a('string').that.has.lengthOf(62)
 
-		it 'should return a string in its callback', (done) ->
-			register.generateUUID (error, uuid) ->
-				expect(error).to.not.exist
-				expect(uuid).to.be.a('string')
-				done()
-
-			return
-
-		it 'should eventually be a string', ->
-			expect(register.generateUUID()).to.eventually.be.a('string')
-
-		it 'should have a length of 62 (31 bytes)', ->
-			expect(register.generateUUID()).to.eventually.have.length(62)
-
-		it 'should generate different uuids each time', ->
-			Promise.all([
-				register.generateUUID()
-				register.generateUUID()
-				register.generateUUID()
-			]).then ([ uuid1, uuid2, uuid3 ]) ->
-				expect(uuid1).to.not.equal(uuid2)
-				expect(uuid2).to.not.equal(uuid3)
-				expect(uuid3).to.not.equal(uuid1)
+		it 'should generate different unique key each time', ->
+			uniqueKeys = _.times(3, register.generateUUID)
+			expect(uniqueKeys[0]).to.not.equal(uniqueKeys[1])
+			expect(uniqueKeys[0]).to.not.equal(uniqueKeys[2])
+			expect(uniqueKeys[1]).to.not.equal(uniqueKeys[2])
 
 	describe '.register()', ->
 
 		describe 'given the post operation is unsuccessful', ->
 
-			beforeEach ->
-				@error = new Error('pine error')
-				@pineInstance =
-					post: => Promise.reject(@error)
-
 			it 'should return an error to the callback', (done) ->
-				register.register @pineInstance,
-					userId: 199
+				register.register
+					userId: 1
 					applicationId: 10350
+					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
-					uuid: 'asdf'
-					apiKey: 'asdf'
-				, (error, device) =>
-					expect(error).to.equal(@error)
-					expect(device).to.not.exist
+					deviceApiKey: register.generateUniqueKey()
+					provisioningApiKey: 'asdf'
+					apiEndpoint: API_ENDPOINT
+				, (error, deviceInfo) ->
+					expect(error).to.be.an('error').that.has.a.property('message', 'Unauthorized')
+					expect(deviceInfo).to.not.exist
 					done()
 
 				return
 
-			it 'should return a rejected promise if no callback', ->
-				promise = register.register @pineInstance,
-					userId: 199
+			it 'should return a rejected promise', ->
+				promise = register.register
+					userId: 1
 					applicationId: 10350
+					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
-					uuid: 'asdf'
-					apiKey: 'asdf'
-				expect(promise).to.eventually.be.rejectedWith(@error)
+					deviceApiKey: register.generateUniqueKey()
+					provisioningApiKey: 'asdf'
+					apiEndpoint: API_ENDPOINT
+				expect(promise).to.eventually.be.rejectedWith(Error, 'Unauthorized')
 
 		describe 'given the post operation is successful', ->
 
-			beforeEach ->
-				@pineInstance =
-					post: -> Promise.resolve
-						id: 999
-						userId: 199
-						applicationId: 10350
-						deviceType: 'raspberry-pi'
-						uuid: 'asdf'
-						apiKey: 'asdf'
-
-			it 'should return the resulting device', (done) ->
-				register.register @pineInstance,
-					userId: 199
+			it 'should return the resulting device info', (done) ->
+				register.register
+					userId: 2
 					applicationId: 10350
+					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
-					uuid: 'asdf'
-					apiKey: 'asdf'
-				, (error, device) ->
+					deviceApiKey: register.generateUniqueKey()
+					provisioningApiKey: 'asdf'
+					apiEndpoint: API_ENDPOINT
+				, (error, deviceInfo) ->
 					expect(error).to.not.exist
-					expect(device).to.deep.equal
+					expect(deviceInfo).to.deep.equal
 						id: 999
-						userId: 199
-						applicationId: 10350
-						deviceType: 'raspberry-pi'
-						uuid: 'asdf'
-						apiKey: 'asdf'
 					done()
 
 				return
 
-			it 'should return a promise that resolves the device if no callback', ->
-				promise = register.register @pineInstance,
-					userId: 199
+			it 'should return a promise that resolves to the device info', ->
+				promise = register.register
+					userId: 2
 					applicationId: 10350
+					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
-					uuid: 'asdf'
-					apiKey: 'asdf'
+					deviceApiKey: register.generateUniqueKey()
+					provisioningApiKey: 'asdf'
+					apiEndpoint: API_ENDPOINT
 
-				expect(promise).to.eventually.deep.equal
-					id: 999
-					userId: 199
-					applicationId: 10350
-					deviceType: 'raspberry-pi'
-					uuid: 'asdf'
-					apiKey: 'asdf'
-
-			describe 'given a explicit uuid', ->
-
-				it 'should call pineInstance.post() with that uuid', (done) ->
-					postSpy = sinon.spy(@pineInstance, 'post')
-
-					register.register @pineInstance,
-						userId: 199
-						applicationId: 10350
-						deviceType: 'raspberry-pi'
-						uuid: 'asdf'
-						apiKey: 'asdf'
-					, (error) ->
-						expect(error).to.not.exist
-						expect(postSpy).to.have.been.calledOnce
-						expect(postSpy.args[0][0].body.uuid).to.equal('asdf')
-						postSpy.restore()
-						done()
-
-					return
-
-			describe 'given no uuid', ->
-
-				it 'should call pineInstance.post() with a generated uuid', (done) ->
-					postSpy = sinon.spy(@pineInstance, 'post')
-
-					register.register @pineInstance,
-						userId: 199
-						applicationId: 10350
-						deviceType: 'raspberry-pi'
-						apiKey: 'asdf'
-					, (error) ->
-						expect(error).to.not.exist
-						expect(postSpy).to.have.been.calledOnce
-						expect(postSpy.args[0][0].body.uuid).to.exist
-						expect(postSpy.args[0][0].body.uuid).to.have.length(62)
-						postSpy.restore()
-						done()
-
-					return
+				expect(promise).to.eventually.deep.equal(id: 999)
