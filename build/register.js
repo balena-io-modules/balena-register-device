@@ -14,36 +14,39 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  */
-var Promise, range;
+var Promise, postAsync, randomstring;
 
 Promise = require('bluebird');
 
-range = require('lodash/range');
+postAsync = Promise.promisify(require('request').post, {
+  multiArgs: true
+});
+
+randomstring = require('randomstring');
 
 
 /**
- * @summary Generate a device UUID
+ * @summary Generate a random key, useful for both uuid and api key.
  * @function
  * @public
  *
  * @description
  * This function allows promise style if the callback is omitted.
  *
- * @param {Function} callback - callback (error, uuid)
+ * @param {Function} callback - callback (error, randomKey)
  *
  * @example
- * deviceRegister.generateUUID (error, uuid) ->
- * 	throw error if error?
- *	# uuid is a generated UUID that can be used for registering
- * 	console.log(uuid)
+ * deviceRegister.generateUniqueKey (error, randomKey) ->
+ *  	throw error if error?
+ * 	# randomKey is a randomly generated key that can be used as either a uuid or an api key
+ * 	console.log(randomKey)
  */
 
-exports.generateUUID = function(callback) {
-  return Promise["try"](function() {
-    return range(62).map(function() {
-      return Math.floor(Math.random() * 16).toString(16);
-    }).join('');
-  }).asCallback(callback);
+exports.generateUniqueKey = function() {
+  return randomstring.generate({
+    length: 62,
+    charset: 'hex'
+  });
 };
 
 
@@ -55,46 +58,57 @@ exports.generateUUID = function(callback) {
  * @description
  * This function allows promise style if the callback is omitted.
  *
- * @param {Object} pineInstance - pine instance
  * @param {Object} options - options
  * @param {Number} options.userId - user id
  * @param {Number} options.applicationId - application id
+ * @param {String} options.uuid - device uuid
  * @param {String} options.deviceType - device type
- * @param {String} options.apiKey - api key
- * @param {String} [options.uuid] - device uuid
- * @param {String} [options.apiPrefix] - api prefix
- * @param {Function} callback - callback (error, device)
+ * @param {String} options.deviceApiKey - api key to create for the device
+ * @param {String} options.provisioningApiKey - provisioning api key
+ * @param {String} options.apiEndpoint - api endpoint
+ * @param {Function} [callback] - callback (error, deviceInfo)
  *
  * @example
- * pine = require('resin-pine')
- *
- * deviceRegister.register pine,
+ * deviceRegister.register
  *		userId: 199
  *		applicationId: 10350
+ *		uuid: '...'
  *		deviceType: 'raspberry-pi'
- *		apiKey: '...'
- *	, (error, device) ->
+ *		deviceApiKey: '...'
+ *		provisioningApiKey: '...'
+ *		apiEndpoint: 'https://api.resin.io'
+ *	, (error, deviceInfo) ->
  *		throw error if error?
- *		console.log(device)
+ *		console.log(deviceInfo) # { id }
  */
 
-exports.register = function(pineInstance, options, callback) {
-  return Promise["try"](function() {
-    return options.uuid || exports.generateUUID();
-  }).then(function(uuid) {
-    return pineInstance.post({
-      apiPrefix: options.apiPrefix,
-      resource: 'device',
-      body: {
-        user: options.userId,
-        application: options.applicationId,
-        uuid: uuid,
-        device_type: options.deviceType,
-        registered_at: Math.floor(Date.now() / 1000)
-      },
-      customOptions: {
-        apikey: options.apiKey
-      }
-    });
-  }).asCallback(callback);
-};
+exports.register = Promise.method(function(options, callback) {
+  var i, len, opt, ref;
+  ref = ['userId', 'applicationId', 'uuid', 'deviceType', 'provisioningApiKey', 'apiEndpoint'];
+  for (i = 0, len = ref.length; i < len; i++) {
+    opt = ref[i];
+    if (options[opt] == null) {
+      throw new Error("Options must contain a '" + opt + "' entry.");
+    }
+  }
+  return postAsync({
+    method: 'POST',
+    url: options.apiEndpoint + "/device/register?apikey=" + options.provisioningApiKey,
+    timeout: 30000,
+    gzip: true,
+    json: true,
+    body: {
+      user: options.userId,
+      application: options.applicationId,
+      uuid: options.uuid,
+      device_type: options.deviceType,
+      api_key: options.deviceApiKey
+    }
+  }).tap(function(arg) {
+    var body, ref1, statusCode;
+    (ref1 = arg[0], statusCode = ref1.statusCode), body = arg[1];
+    if (statusCode !== 201) {
+      throw new Error(body);
+    }
+  }).get(1).asCallback(callback);
+});

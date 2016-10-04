@@ -1,6 +1,6 @@
 {
   "name": "resin-register-device",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Resin.io device registration utilities",
   "main": "build/register.js",
   "homepage": "https://github.com/resin-io-modules/resin-register-device",
@@ -19,7 +19,7 @@
   "scripts": {
     "build": "gulp build",
     "lint": "resin-lint lib tests gulpfile.coffee",
-    "test": "gulp test",
+    "test": "npm run lint && gulp test",
     "prepublish": "npm test && npm run build"
   },
   "author": "Juan Cruz Viotti <juan@resin.io>",
