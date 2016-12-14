@@ -27,7 +27,7 @@ randomstring = require('randomstring')
 #
 # @example
 # randomKey = deviceRegister.generateUniqueKey()
-# randomKey is a randomly generated key that can be used as either a uuid or an api key
+# # randomKey is a randomly generated key that can be used as either a uuid or an api key
 # console.log(randomKey)
 ###
 exports.generateUniqueKey = ->
