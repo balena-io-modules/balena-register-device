@@ -30,16 +30,12 @@ randomstring = require('randomstring');
  * @function
  * @public
  *
- * @description
- * This function allows promise style if the callback is omitted.
- *
- * @param {Function} callback - callback (error, randomKey)
+ * @returns {String} A generated key
  *
  * @example
- * deviceRegister.generateUniqueKey (error, randomKey) ->
- *  	throw error if error?
- * 	# randomKey is a randomly generated key that can be used as either a uuid or an api key
- * 	console.log(randomKey)
+ * randomKey = deviceRegister.generateUniqueKey()
+ * # randomKey is a randomly generated key that can be used as either a uuid or an api key
+ * console.log(randomKey)
  */
 
 exports.generateUniqueKey = function() {
