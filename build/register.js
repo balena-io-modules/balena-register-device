@@ -14,13 +14,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  */
-var Promise, postAsync, randomstring;
+var Promise, randomstring;
 
 Promise = require('bluebird');
-
-postAsync = Promise.promisify(require('request').post, {
-  multiArgs: true
-});
 
 randomstring = require('randomstring');
 
@@ -87,24 +83,27 @@ exports.register = Promise.method(function(options, callback) {
       throw new Error("Options must contain a '" + opt + "' entry.");
     }
   }
-  return postAsync({
+  return fetch(options.apiEndpoint + "/device/register?apikey=" + options.provisioningApiKey, {
     method: 'POST',
-    url: options.apiEndpoint + "/device/register?apikey=" + options.provisioningApiKey,
-    timeout: 30000,
-    gzip: true,
-    json: true,
-    body: {
+    headers: {
+      'accept': 'application/json',
+      'accept-encoding': 'gzip',
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
       user: options.userId,
       application: options.applicationId,
       uuid: options.uuid,
       device_type: options.deviceType,
       api_key: options.deviceApiKey
+    })
+  }).timeout(30000).then(function(response) {
+    if (response.status !== 201) {
+      return response.text().then(function(error) {
+        throw new Error(error);
+      });
+    } else {
+      return response.json();
     }
-  }).tap(function(arg) {
-    var body, ref1, statusCode;
-    (ref1 = arg[0], statusCode = ref1.statusCode), body = arg[1];
-    if (statusCode !== 201) {
-      throw new Error(body);
-    }
-  }).get(1).asCallback(callback);
+  }).asCallback(callback);
 });

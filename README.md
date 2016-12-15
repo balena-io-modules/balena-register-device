@@ -21,6 +21,10 @@ $ npm install --save resin-register-device
 Documentation
 -------------
 
+**Note.** This module expects [`fetch`](https://developer.mozilla.org/en/docs/Web/API/Fetch_API)
+and [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+to be available in the global scope. The easiest way to get `fetch` is to require the `isomorphic-fetch` npm module.
+
 ### deviceRegister.generateUniqueKey()
 
 Generate a random key, useful for both uuid and api key.

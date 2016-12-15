@@ -15,7 +15,6 @@ limitations under the License.
 ###
 
 Promise = require('bluebird')
-postAsync = Promise.promisify(require('request').post, multiArgs: true)
 randomstring = require('randomstring')
 
 ###*
@@ -78,21 +77,23 @@ exports.register = Promise.method (options, callback) ->
 	for opt in [ 'userId', 'applicationId', 'uuid', 'deviceType', 'provisioningApiKey', 'apiEndpoint']
 		if !options[opt]?
 			throw new Error("Options must contain a '#{opt}' entry.")
-	postAsync
+	fetch("#{options.apiEndpoint}/device/register?apikey=#{options.provisioningApiKey}"
 		method: 'POST'
-		url: "#{options.apiEndpoint}/device/register?apikey=#{options.provisioningApiKey}"
-		timeout: 30000
-		gzip: true
-		json: true
-		body:
+		headers:
+			'accept': 'application/json'
+			'accept-encoding': 'gzip'
+			'content-type': 'application/json'
+		body: JSON.stringify
 			user: options.userId
 			application: options.applicationId
 			uuid: options.uuid
 			device_type: options.deviceType
 			api_key: options.deviceApiKey
-	.tap ([{ statusCode }, body]) ->
-		if statusCode isnt 201
-			throw new Error(body)
-	.get(1)
+	).timeout(30000)
+	.then (response) ->
+		if response.status isnt 201
+			response.text().then (error) ->
+				throw new Error(error)
+		else response.json()
 	# Allow promise based and callback based styles
 	.asCallback(callback)

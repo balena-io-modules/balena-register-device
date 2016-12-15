@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### Changed
+
+- **Breaking!** Moved from `request` to `fetch` - a global `fetch` is now required to use this module.
+
 ## [3.0.0] - 2016-10-04
 
 - Changed `register()` to work with the new device registration flow.

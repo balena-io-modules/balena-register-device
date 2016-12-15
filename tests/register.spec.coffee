@@ -1,9 +1,6 @@
-requestMock = require 'requestmock'
-mockery = require 'mockery'
-
-requestMock.log(false)
-mockery.enable(warnOnUnregistered: false)
-mockery.registerMock('request', requestMock)
+Promise = require 'bluebird'
+global.Promise = Promise
+require 'isomorphic-fetch'
 
 API_ENDPOINT = 'https://api.resin.io'
 
@@ -13,18 +10,27 @@ expect = chai.expect
 chai.use(require('chai-as-promised'))
 register = require('../lib/register')
 
-requestMock.register 'post', "#{API_ENDPOINT}/device/register", ({ body: { user } }, cb) ->
-	switch user
-		when 1
-			cb(null, statusCode: 401, 'Unauthorized')
-		when 2
-			cb(null, statusCode: 201, {
-				id: 999
-			})
-		else
-			throw new Error("Unrecognised user for mocking '#{user}'")
+fetchMock = require('fetch-mock')
 
 describe 'Device Register:', ->
+
+	beforeEach ->
+		fetchMock.post "#{API_ENDPOINT}/device/register?apikey=asdf", (url, opts) ->
+			user = JSON.parse(opts.body).user
+			switch user
+				when 1
+					status: 401
+					body: 'Unauthorized'
+				when 2
+					status: 201
+					body:
+						id: 999
+				else
+					throw new Error("Unrecognised user for mocking '#{user}'")
+
+	afterEach ->
+		fetchMock.restore()
+
 	describe '.generateUniqueKey()', ->
 
 		it 'should return a string that has a length of 62 (31 bytes)', ->
