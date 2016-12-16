@@ -15,6 +15,7 @@ limitations under the License.
 ###
 
 Promise = require('bluebird')
+{ fetch } = require('fetch-ponyfill')({ Promise: Promise })
 randomstring = require('randomstring')
 
 ###*

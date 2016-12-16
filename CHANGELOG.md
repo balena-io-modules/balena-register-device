@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- **Breaking!** Moved from `request` to `fetch` - a global `fetch` is now required to use this module.
+- Moved from `request` to `fetch` internally.
 
 ## [3.0.0] - 2016-10-04
 

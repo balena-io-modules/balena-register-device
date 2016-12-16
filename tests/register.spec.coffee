@@ -1,16 +1,22 @@
-Promise = require 'bluebird'
-global.Promise = Promise
-require 'isomorphic-fetch'
-
 API_ENDPOINT = 'https://api.resin.io'
 
 _ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
 chai.use(require('chai-as-promised'))
-register = require('../lib/register')
 
-fetchMock = require('fetch-mock')
+mockery = require('mockery')
+mockery.enable(warnOnUnregistered: false)
+
+# Required to get fetch-mock using bluebird.
+# Can be dropped if https://github.com/wheresrhys/fetch-mock/issues/78 is resolved
+global.Promise = require('bluebird')
+fetchMock = require('fetch-mock').sandbox()
+
+mockery.registerMock 'fetch-ponyfill', ->
+	fetch: fetchMock
+
+register = require('../lib/register')
 
 describe 'Device Register:', ->
 
