@@ -1,30 +1,43 @@
-requestMock = require 'requestmock'
-mockery = require 'mockery'
-
-requestMock.log(false)
-mockery.enable(warnOnUnregistered: false)
-mockery.registerMock('request', requestMock)
-
 API_ENDPOINT = 'https://api.resin.io'
 
 _ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
 chai.use(require('chai-as-promised'))
+
+mockery = require('mockery')
+mockery.enable(warnOnUnregistered: false)
+
+fetchMock = require('fetch-mock').sandbox()
+
+Promise = require('bluebird')
+mockery.registerMock 'fetch-ponyfill', ->
+	fetch: ->
+		# Bluebird wrapping is required to get fetch-mock using bluebird nicely.
+		# Can be dropped when https://github.com/wheresrhys/fetch-mock/issues/78 is resolved
+		Promise.resolve(fetchMock(arguments...))
+
 register = require('../lib/register')
 
-requestMock.register 'post', "#{API_ENDPOINT}/device/register", ({ body: { user } }, cb) ->
-	switch user
-		when 1
-			cb(null, statusCode: 401, 'Unauthorized')
-		when 2
-			cb(null, statusCode: 201, {
-				id: 999
-			})
-		else
-			throw new Error("Unrecognised user for mocking '#{user}'")
-
 describe 'Device Register:', ->
+
+	beforeEach ->
+		fetchMock.post "#{API_ENDPOINT}/device/register?apikey=asdf", (url, opts) ->
+			user = JSON.parse(opts.body).user
+			switch user
+				when 1
+					status: 401
+					body: 'Unauthorized'
+				when 2
+					status: 201
+					body:
+						id: 999
+				else
+					throw new Error("Unrecognised user for mocking '#{user}'")
+
+	afterEach ->
+		fetchMock.restore()
+
 	describe '.generateUniqueKey()', ->
 
 		it 'should return a string that has a length of 62 (31 bytes)', ->
