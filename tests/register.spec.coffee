@@ -8,13 +8,14 @@ chai.use(require('chai-as-promised'))
 mockery = require('mockery')
 mockery.enable(warnOnUnregistered: false)
 
-# Required to get fetch-mock using bluebird.
-# Can be dropped if https://github.com/wheresrhys/fetch-mock/issues/78 is resolved
-global.Promise = require('bluebird')
 fetchMock = require('fetch-mock').sandbox()
 
+Promise = require('bluebird')
 mockery.registerMock 'fetch-ponyfill', ->
-	fetch: fetchMock
+	fetch: ->
+		# Bluebird wrapping is required to get fetch-mock using bluebird nicely.
+		# Can be dropped when https://github.com/wheresrhys/fetch-mock/issues/78 is resolved
+		Promise.resolve(fetchMock(arguments...))
 
 register = require('../lib/register')
 
