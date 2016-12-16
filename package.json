@@ -34,13 +34,12 @@
     "gulp-util": "^3.0.1",
     "lodash": "^4.0.0",
     "mocha": "^3.0.0",
-    "mockery": "^1.7.0",
-    "requestmock": "0.0.9",
-    "resin-lint": "^1.4.0"
+    "resin-lint": "^1.4.0",
+    "resin-request": "^7.0.0",
+    "sinon": "^1.17.6"
   },
   "dependencies": {
     "bluebird": "^3.0.0",
-    "randomstring": "^1.1.5",
-    "request": "^2.74.0"
+    "randomstring": "^1.1.5"
   }
 }

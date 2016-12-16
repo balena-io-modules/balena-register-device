@@ -1,9 +1,4 @@
-requestMock = require 'requestmock'
-mockery = require 'mockery'
-
-requestMock.log(false)
-mockery.enable(warnOnUnregistered: false)
-mockery.registerMock('request', requestMock)
+Promise = require 'bluebird'
 
 API_ENDPOINT = 'https://api.resin.io'
 
@@ -11,18 +6,23 @@ _ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
 chai.use(require('chai-as-promised'))
-register = require('../lib/register')
 
-requestMock.register 'post', "#{API_ENDPOINT}/device/register", ({ body: { user } }, cb) ->
+sendRequestStub = ({ body: { user } }) ->
 	switch user
 		when 1
-			cb(null, statusCode: 401, 'Unauthorized')
+			Promise.reject  Object.assign new Error('Unauthorized'),
+				statusCode: 401
 		when 2
-			cb(null, statusCode: 201, {
-				id: 999
-			})
+			Promise.resolve
+				statusCode: 201
+				body:
+					id: 999
 		else
 			throw new Error("Unrecognised user for mocking '#{user}'")
+
+register = require('../lib/register')({
+	request: send: sendRequestStub
+})
 
 describe 'Device Register:', ->
 	describe '.generateUniqueKey()', ->

@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### Changed
+
+- **Breaking**: Moved to factory in line with Resin-SDK, accepting a Resin-Request instance at runtime
+- **Breaking**: Timeouts in requests now use the Bluebird implementation. This changes how errors are thrown slightly: a Promise.TimeoutError is now thrown instead of a raw Error, with the message "operation timed out" instead of "timeout".
+
 ## [3.0.0] - 2016-10-04
 
 - Changed `register()` to work with the new device registration flow.
