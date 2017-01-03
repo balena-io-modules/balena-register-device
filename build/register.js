@@ -15,11 +15,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  */
-var Promise, getResinRegisterDevice, randomstring;
+var Promise, getRequest, getResinRegisterDevice, randomstring;
 
 Promise = require('bluebird');
 
 randomstring = require('randomstring');
+
+getRequest = require('resin-request');
 
 
 /**
@@ -31,8 +33,11 @@ randomstring = require('randomstring');
  */
 
 module.exports = getResinRegisterDevice = function(arg) {
-  var request;
-  request = arg.request;
+  var dataDirectory, request;
+  dataDirectory = arg.dataDirectory;
+  request = getRequest({
+    dataDirectory: dataDirectory
+  });
   return {
 
     /**

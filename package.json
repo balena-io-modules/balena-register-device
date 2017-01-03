@@ -28,6 +28,8 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "coffee-script": "~1.11.0",
+    "fetch-mock": "^5.8.0",
+    "fetch-ponyfill": "^3.0.2",
     "gulp": "^3.8.10",
     "gulp-coffee": "^2.2.0",
     "gulp-mocha": "^3.0.0",
@@ -35,11 +37,12 @@
     "lodash": "^4.0.0",
     "mocha": "^3.0.0",
     "resin-lint": "^1.4.0",
-    "resin-request": "^7.0.0",
+    "resin-settings-client": "^3.5.2",
     "sinon": "^1.17.6"
   },
   "dependencies": {
     "bluebird": "^3.0.0",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "resin-request": "^7.0.0"
   }
 }

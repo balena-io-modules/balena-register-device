@@ -1,28 +1,47 @@
 Promise = require 'bluebird'
 
-API_ENDPOINT = 'https://api.resin.io'
-
 _ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
 chai.use(require('chai-as-promised'))
+errors = require('resin-errors')
 
-sendRequestStub = ({ body: { user } }) ->
+API_ENDPOINT = 'https://api.resin.io'
+PROVISIONING_KEY = 'abcd'
+IS_BROWSER = window?
+
+dataDirectory = null
+
+if IS_BROWSER
+	# The browser mock assumes global fetch prototypes exist
+	# Can improve after https://github.com/wheresrhys/fetch-mock/issues/158
+	realFetchModule = require('fetch-ponyfill')({ Promise })
+	_.assign(global, _.pick(realFetchModule, 'Headers', 'Request', 'Response'))
+else
+	settings = require('resin-settings-client')
+	dataDirectory = settings.get('dataDirectory')
+
+fetchMock = require('fetch-mock').sandbox(Promise)
+# Promise sandbox config needs a little help. See:
+# https://github.com/wheresrhys/fetch-mock/issues/159#issuecomment-268249788
+fetchMock.fetchMock.Promise = Promise
+require('resin-request/build/utils').fetch = fetchMock.fetchMock # Can become just fetchMock after issue above is fixed.
+
+register = require('../lib/register')({ dataDirectory })
+
+fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Promise.method (url, opts) ->
+	user = JSON.parse(opts.body).user
 	switch user
 		when 1
-			Promise.reject  Object.assign new Error('Unauthorized'),
-				statusCode: 401
+			status: 401
+			body: 'Unauthorized'
 		when 2
-			Promise.resolve
-				statusCode: 201
-				body:
-					id: 999
+			status: 201
+			headers: 'content-type': 'application/json'
+			body:
+				id: 999
 		else
 			throw new Error("Unrecognised user for mocking '#{user}'")
-
-register = require('../lib/register')({
-	request: send: sendRequestStub
-})
 
 describe 'Device Register:', ->
 	describe '.generateUniqueKey()', ->
@@ -48,10 +67,11 @@ describe 'Device Register:', ->
 					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
-					provisioningApiKey: 'asdf'
+					provisioningApiKey: PROVISIONING_KEY
 					apiEndpoint: API_ENDPOINT
 				, (error, deviceInfo) ->
-					expect(error).to.be.an('error').that.has.a.property('message', 'Unauthorized')
+					expect(error).to.be.instanceof(errors.ResinRequestError)
+					expect(error).to.have.a.property('message', 'Request error: Unauthorized')
 					expect(deviceInfo).to.not.exist
 					done()
 
@@ -64,7 +84,7 @@ describe 'Device Register:', ->
 					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
-					provisioningApiKey: 'asdf'
+					provisioningApiKey: PROVISIONING_KEY
 					apiEndpoint: API_ENDPOINT
 				expect(promise).to.eventually.be.rejectedWith(Error, 'Unauthorized')
 
@@ -77,7 +97,7 @@ describe 'Device Register:', ->
 					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
-					provisioningApiKey: 'asdf'
+					provisioningApiKey: PROVISIONING_KEY
 					apiEndpoint: API_ENDPOINT
 				, (error, deviceInfo) ->
 					expect(error).to.not.exist
@@ -94,7 +114,7 @@ describe 'Device Register:', ->
 					uuid: register.generateUniqueKey()
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
-					provisioningApiKey: 'asdf'
+					provisioningApiKey: PROVISIONING_KEY
 					apiEndpoint: API_ENDPOINT
 
 				expect(promise).to.eventually.deep.equal(id: 999)

@@ -21,14 +21,15 @@ $ npm install --save resin-register-device
 Documentation
 -------------
 
-Resin-Register-Device exports a factory function, which must be called with a dependencies object, containing a configured [`resin-request`](https://github.com/resin-io-modules/resin-request) instance.
+Resin-Register-Device exports a factory function, which takes a single option: `dataDirectory`. This is required in Node.js, but ignored in the browser.
+
+`dataDirectory` is the directory where the user settings are stored, normally retrieved like `require('resin-settings-client').get('dataDirectory')`.
+
 
 Example:
 ```coffee
 deviceRegister = require('resin-register-device')({
-	request: require('resin-request')({
-		dataDirectory: '/opt/cache/resin'
-	})
+	dataDirectory: '/opt/cache/resin'
 })
 ```
 
