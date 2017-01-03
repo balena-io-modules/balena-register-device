@@ -85,7 +85,7 @@ module.exports = getResinRegisterDevice = ({ dataDirectory }) ->
 	#		console.log(deviceInfo) # { id }
 	###
 	register: Promise.method (options, callback) ->
-		for opt in [ 'userId', 'applicationId', 'uuid', 'deviceType', 'provisioningApiKey', 'apiEndpoint']
+		for opt in [ 'userId', 'applicationId', 'uuid', 'deviceType', 'provisioningApiKey', 'apiEndpoint' ]
 			if !options[opt]?
 				throw new Error("Options must contain a '#{opt}' entry.")
 
