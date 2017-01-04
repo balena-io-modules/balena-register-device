@@ -41,7 +41,8 @@ fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Pro
 		else
 			throw new Error("Unrecognised user for mocking '#{user}'")
 
-request = require('resin-request')({ dataDirectory })
+token = require('resin-token')({ dataDirectory })
+request = require('resin-request')({ token })
 register = require('../lib/register')({ request })
 
 describe 'Device Register:', ->

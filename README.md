@@ -26,9 +26,7 @@ Resin-Register-Device exports a factory function, which must be called with a de
 Example:
 ```coffee
 deviceRegister = require('resin-register-device')({
-	request: require('resin-request')({
-		dataDirectory: '/opt/cache/resin'
-	})
+	request: request # An instantiated resin-request instance
 })
 ```
 
