@@ -16,7 +16,6 @@ limitations under the License.
 
 Promise = require('bluebird')
 randomstring = require('randomstring')
-getRequest = require('resin-request')
 
 ###*
 # @summary Creates a Resin Register Device instance
@@ -25,9 +24,7 @@ getRequest = require('resin-request')
 #
 # @returns {Object} Resin Register Device instance { generateUniqueKey: ..., register: ... }
 ###
-module.exports = getResinRegisterDevice = ({ dataDirectory }) ->
-	request = getRequest({ dataDirectory })
-
+module.exports = getResinRegisterDevice = ({ request }) ->
 	###*
 	# @summary Generate a random key, useful for both uuid and api key.
 	# @function

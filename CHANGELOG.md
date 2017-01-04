@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- **Breaking**: Moved to factory, in line with Resin-SDK, accepting a data directory at runtime
+- **Breaking**: Moved to factory, in line with Resin-SDK, accepting a Resin-Request instance at runtime
 - **Breaking**: Request errors are now thrown by Resin-Request directly, so their format has changed slightly:
 	* Request timeouts now throw Promise.TimeoutError instead of raw Error, with the message "operation timed out" instead of "timeout"
 	* Error responses from the server now throw ResinRequestError (see [resin-errors](https://github.com/resin-io-modules/resin-errors)) instead of raw Error, with the body prefixed with "Request error: "

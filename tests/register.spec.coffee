@@ -18,16 +18,14 @@ if IS_BROWSER
 	realFetchModule = require('fetch-ponyfill')({ Promise })
 	_.assign(global, _.pick(realFetchModule, 'Headers', 'Request', 'Response'))
 else
-	settings = require('resin-settings-client')
-	dataDirectory = settings.get('dataDirectory')
+	temp = require('temp').track()
+	dataDirectory = temp.mkdirSync()
 
 fetchMock = require('fetch-mock').sandbox(Promise)
 # Promise sandbox config needs a little help. See:
 # https://github.com/wheresrhys/fetch-mock/issues/159#issuecomment-268249788
 fetchMock.fetchMock.Promise = Promise
 require('resin-request/build/utils').fetch = fetchMock.fetchMock # Can become just fetchMock after issue above is fixed.
-
-register = require('../lib/register')({ dataDirectory })
 
 fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Promise.method (url, opts) ->
 	user = JSON.parse(opts.body).user
@@ -42,6 +40,9 @@ fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Pro
 				id: 999
 		else
 			throw new Error("Unrecognised user for mocking '#{user}'")
+
+request = require('resin-request')({ dataDirectory })
+register = require('../lib/register')({ request })
 
 describe 'Device Register:', ->
 	describe '.generateUniqueKey()', ->
