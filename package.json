@@ -38,7 +38,6 @@
     "mocha": "^3.0.0",
     "resin-lint": "^1.4.0",
     "resin-request": "^7.0.0",
-    "resin-settings-client": "^3.5.2",
     "sinon": "^1.17.6",
     "temp": "^0.8.3"
   },
