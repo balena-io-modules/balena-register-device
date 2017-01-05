@@ -21,6 +21,15 @@ $ npm install --save resin-register-device
 Documentation
 -------------
 
+Resin-Register-Device exports a factory function, which must be called with a dependencies object, containing a configured [`resin-request`](https://github.com/resin-io-modules/resin-request) instance.
+
+Example:
+```coffee
+deviceRegister = require('resin-register-device')({
+	request: request # An instantiated resin-request instance
+})
+```
+
 ### deviceRegister.generateUniqueKey()
 
 Generate a random key, useful for both uuid and api key.
@@ -53,8 +62,6 @@ The `callback` gets called with two arguments: `(error, deviceInfo)`, where `dev
 Example:
 
 ```coffee
-deviceRegister = require('resin-register-device')
-
 deviceRegister.register
 		userId: 199
 		applicationId: 10350

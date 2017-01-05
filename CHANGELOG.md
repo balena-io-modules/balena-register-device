@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### Changed
+
+- **Breaking**: Moved to factory, in line with Resin-SDK, accepting a Resin-Request instance at runtime
+- **Breaking**: Request errors are now thrown by Resin-Request directly, so their format has changed slightly:
+	* Request timeouts now throw Promise.TimeoutError instead of raw Error, with the message "operation timed out" instead of "timeout"
+	* Error responses from the server now throw ResinRequestError (see [resin-errors](https://github.com/resin-io-modules/resin-errors)) instead of raw Error, with the body prefixed with "Request error: "
+
 ## [3.0.0] - 2016-10-04
 
 - Changed `register()` to work with the new device registration flow.
@@ -51,6 +58,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Do not throw sync exceptions on argument expectations.
 
+[3.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v2.1.1...v3.0.0
+[2.1.1]: https://github.com/resin-io-modules/resin-register-device/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/resin-io-modules/resin-register-device/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/resin-io-modules/resin-register-device/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v1.1.0...v2.0.0

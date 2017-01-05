@@ -28,19 +28,25 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "coffee-script": "~1.11.0",
+    "fetch-mock": "^5.8.0",
+    "fetch-ponyfill": "^3.0.2",
     "gulp": "^3.8.10",
     "gulp-coffee": "^2.2.0",
     "gulp-mocha": "^3.0.0",
     "gulp-util": "^3.0.1",
     "lodash": "^4.0.0",
     "mocha": "^3.0.0",
-    "mockery": "^1.7.0",
-    "requestmock": "0.0.9",
-    "resin-lint": "^1.4.0"
+    "resin-lint": "^1.4.0",
+    "resin-request": "^8.0.0",
+    "resin-token": "^3.0.0",
+    "sinon": "^1.17.6",
+    "temp": "^0.8.3"
   },
   "dependencies": {
     "bluebird": "^3.0.0",
-    "randomstring": "^1.1.5",
-    "request": "^2.74.0"
+    "randomstring": "^1.1.5"
+  },
+  "peerDependencies": {
+    "resin-request": "^8.0.0"
   }
 }
