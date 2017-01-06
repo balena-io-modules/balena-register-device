@@ -90,6 +90,7 @@ module.exports = getResinRegisterDevice = ({ request }) ->
 			method: 'POST'
 			baseUrl: options.apiEndpoint
 			url: '/device/register'
+			refreshToken: false
 			apiKey: options.provisioningApiKey
 			timeout: 30000
 			body:
