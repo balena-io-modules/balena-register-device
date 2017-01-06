@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### Changed
+
+- Passing `refreshToken: false` to `resin-request` to save unnecessary request to `/whoami`
+- Internal refactoring to tests
+- Run Karma tests again
+
 ## [4.0.0] - 2017-01-04
 
 ### Changed
