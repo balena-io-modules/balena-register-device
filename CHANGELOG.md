@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.0.1] - 2017-01-06
+
 ### Changed
 
 - Passing `refreshToken: false` to `resin-request` to save unnecessary request to `/whoami`
@@ -66,6 +68,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Do not throw sync exceptions on argument expectations.
 
+[4.0.1]: https://github.com/resin-io-modules/resin-register-device/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v2.1.1...v3.0.0
 [2.1.1]: https://github.com/resin-io-modules/resin-register-device/compare/v2.1.0...v2.1.1
