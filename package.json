@@ -40,10 +40,8 @@
     "resin-config-karma": "^1.0.4",
     "resin-fetch-mock": "^1.0.1",
     "resin-lint": "^1.4.0",
-    "resin-request": "^8.0.0",
-    "resin-token": "^3.0.0",
-    "sinon": "^1.17.6",
-    "temp": "^0.8.3"
+    "resin-request": "^8.4.0",
+    "sinon": "^1.17.6"
   },
   "dependencies": {
     "bluebird": "^3.0.0",

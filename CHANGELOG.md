@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### Changed
+
+- Updated resin-request, removing the need to use a token in the provided resin-request instance
+
 ## [4.0.1] - 2017-01-06
 
 ### Changed

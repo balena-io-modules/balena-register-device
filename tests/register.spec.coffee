@@ -8,19 +8,11 @@ getRequest = require('resin-request')
 
 API_ENDPOINT = 'https://api.resin.io'
 PROVISIONING_KEY = 'abcd'
-IS_BROWSER = window?
 
 { fetchMock, mockedFetch } = require('resin-fetch-mock')
 getRequest._setFetch(mockedFetch)
 
-dataDirectory = null
-
-if not IS_BROWSER
-	temp = require('temp').track()
-	dataDirectory = temp.mkdirSync()
-
-token = require('resin-token')({ dataDirectory })
-request = getRequest({ token })
+request = getRequest()
 register = require('../lib/register')({ request })
 
 fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Promise.method (url, opts) ->
