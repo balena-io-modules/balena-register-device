@@ -1,6 +1,6 @@
 {
   "name": "resin-register-device",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "description": "Resin.io device registration utilities",
   "main": "build/register.js",
   "homepage": "https://github.com/resin-io-modules/resin-register-device",
@@ -40,7 +40,7 @@
     "resin-config-karma": "^1.0.4",
     "resin-fetch-mock": "^1.0.1",
     "resin-lint": "^1.4.0",
-    "resin-request": "^8.4.0",
+    "resin-request": "^9.0.2",
     "sinon": "^1.17.6"
   },
   "dependencies": {
@@ -48,6 +48,6 @@
     "randomstring": "^1.1.5"
   },
   "peerDependencies": {
-    "resin-request": "^8.0.0"
+    "resin-request": "^9.0.2"
   }
 }
