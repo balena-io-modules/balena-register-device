@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.1.1] - 2018-01-25
+
+### Changed
+
+- Fixed tests
+
 ## [4.1.0] - 2017-04-10
 
 ### Changed
@@ -74,6 +80,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Do not throw sync exceptions on argument expectations.
 
+[4.1.1]: https://github.com/resin-io-modules/resin-register-device/compare/v4.1.0...v4.1.1
+[4.1.0]: https://github.com/resin-io-modules/resin-register-device/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/resin-io-modules/resin-register-device/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v2.1.1...v3.0.0

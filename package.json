@@ -1,6 +1,6 @@
 {
   "name": "resin-register-device",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Resin.io device registration utilities",
   "main": "build/register.js",
   "homepage": "https://github.com/resin-io-modules/resin-register-device",
