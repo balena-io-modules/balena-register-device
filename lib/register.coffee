@@ -24,7 +24,7 @@ randomstring = require('randomstring')
 #
 # @returns {Object} Resin Register Device instance { generateUniqueKey: ..., register: ... }
 ###
-module.exports = getResinRegisterDevice = ({ request }) ->
+module.exports = ({ request }) ->
 	###*
 	# @summary Generate a random key, useful for both uuid and api key.
 	# @function

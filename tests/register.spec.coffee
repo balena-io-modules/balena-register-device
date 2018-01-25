@@ -10,9 +10,9 @@ API_ENDPOINT = 'https://api.resin.io'
 PROVISIONING_KEY = 'abcd'
 
 { fetchMock, mockedFetch } = require('resin-fetch-mock')
-getRequest._setFetch(mockedFetch)
 
 request = getRequest()
+request._setFetch(mockedFetch)
 register = require('../lib/register')({ request })
 
 fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Promise.method (url, opts) ->
