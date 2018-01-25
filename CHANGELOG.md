@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.0] - 2018-01-25
+
+### Changed
+
+- Updated resin-request peer dependency to ^9.0.2
+
 ## [4.1.1] - 2018-01-25
 
 ### Changed
@@ -80,6 +86,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Do not throw sync exceptions on argument expectations.
 
+[5.0.0]: https://github.com/resin-io-modules/resin-register-device/compare/v4.1.1...v5.0.0
 [4.1.1]: https://github.com/resin-io-modules/resin-register-device/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/resin-io-modules/resin-register-device/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/resin-io-modules/resin-register-device/compare/v4.0.0...v4.0.1
