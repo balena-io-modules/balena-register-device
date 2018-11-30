@@ -4,6 +4,7 @@
   "description": "Resin.io device registration utilities",
   "main": "build/register.js",
   "homepage": "https://github.com/resin-io-modules/resin-register-device",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/resin-io-modules/resin-register-device.git"
@@ -37,10 +38,10 @@
     "karma": "^1.3.0",
     "lodash": "^4.0.0",
     "mocha": "^3.0.0",
-    "resin-config-karma": "^1.0.4",
+    "resin-config-karma": "^2.0.0",
     "resin-fetch-mock": "^1.0.1",
     "resin-lint": "^1.4.0",
-    "resin-request": "^9.0.2",
+    "resin-request": "9.0.2",
     "sinon": "^1.17.6"
   },
   "dependencies": {
