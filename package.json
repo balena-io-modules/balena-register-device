@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git://github.com/balena-io-modules/balena-register-device.git"
   },
+  "files": [
+    "build/"
+  ],
   "keywords": [
     "resin",
     "balena",
