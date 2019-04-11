@@ -3,10 +3,10 @@ _ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
 chai.use(require('chai-as-promised'))
-errors = require('resin-errors')
-getRequest = require('resin-request')
+errors = require('balena-errors')
+getRequest = require('balena-request')
 
-API_ENDPOINT = 'https://api.resin.io'
+API_ENDPOINT = 'https://api.balena-cloud.com'
 PROVISIONING_KEY = 'abcd'
 
 { fetchMock, mockedFetch } = require('resin-fetch-mock')
@@ -56,7 +56,7 @@ describe 'Device Register:', ->
 					provisioningApiKey: PROVISIONING_KEY
 					apiEndpoint: API_ENDPOINT
 				, (error, deviceInfo) ->
-					expect(error).to.be.instanceof(errors.ResinRequestError)
+					expect(error).to.be.instanceof(errors.BalenaRequestError)
 					expect(error).to.have.a.property('message', 'Request error: Unauthorized')
 					expect(deviceInfo).to.not.exist
 					done()
