@@ -26,7 +26,7 @@
     "test-node": "gulp test",
     "test-browser": "mockttp -c karma start",
     "test": "npm run lint && npm run test-node && npm run test-browser",
-    "prepublish": "npm test && npm run build"
+    "prepare": "npm run build"
   },
   "author": "Juan Cruz Viotti <juan@resin.io>",
   "license": "Apache-2.0",
