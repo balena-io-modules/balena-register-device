@@ -1,35 +1,18 @@
-Promise = require 'bluebird'
 _ = require 'lodash'
 chai = require('chai')
 expect = chai.expect
 chai.use(require('chai-as-promised'))
 errors = require('balena-errors')
 getRequest = require('balena-request')
-
-API_ENDPOINT = 'https://api.balena-cloud.com'
-PROVISIONING_KEY = 'abcd'
-
-{ fetchMock, mockedFetch } = require('resin-fetch-mock')
+mockServer = require('mockttp').getLocal()
 
 request = getRequest()
-request._setFetch(mockedFetch)
 register = require('../lib/register')({ request })
 
-fetchMock.post "#{API_ENDPOINT}/device/register?apikey=#{PROVISIONING_KEY}", Promise.method (url, opts) ->
-	user = JSON.parse(opts.body).user
-	switch user
-		when 1
-			status: 401
-			body: 'Unauthorized'
-		when 2
-			status: 201
-			headers: 'content-type': 'application/json'
-			body:
-				id: 999
-		else
-			throw new Error("Unrecognised user for mocking '#{user}'")
+PROVISIONING_KEY = 'abcd'
 
 describe 'Device Register:', ->
+
 	describe '.generateUniqueKey()', ->
 
 		it 'should return a string that has a length of 62 (31 bytes)', ->
@@ -44,6 +27,24 @@ describe 'Device Register:', ->
 
 	describe '.register()', ->
 
+		before ->
+			mockServer.start().then ->
+				mockServer.post("/device/register?apikey=#{PROVISIONING_KEY}").thenCallback (req) ->
+					user = JSON.parse(req.body.text).user
+					switch user
+						when 1
+							status: 401
+							body: 'Unauthorized'
+						when 2
+							status: 201
+							json:
+								id: 999
+						else
+							throw new Error("Unrecognised user for mocking '#{user}'")
+
+		after ->
+			mockServer.stop()
+
 		describe 'given the post operation is unsuccessful', ->
 
 			it 'should return an error to the callback', (done) ->
@@ -54,7 +55,7 @@ describe 'Device Register:', ->
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
 					provisioningApiKey: PROVISIONING_KEY
-					apiEndpoint: API_ENDPOINT
+					apiEndpoint: mockServer.url
 				, (error, deviceInfo) ->
 					expect(error).to.be.instanceof(errors.BalenaRequestError)
 					expect(error).to.have.a.property('message', 'Request error: Unauthorized')
@@ -71,7 +72,7 @@ describe 'Device Register:', ->
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
 					provisioningApiKey: PROVISIONING_KEY
-					apiEndpoint: API_ENDPOINT
+					apiEndpoint: mockServer.url
 				expect(promise).to.eventually.be.rejectedWith(Error, 'Unauthorized')
 
 		describe 'given the post operation is successful', ->
@@ -84,7 +85,7 @@ describe 'Device Register:', ->
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
 					provisioningApiKey: PROVISIONING_KEY
-					apiEndpoint: API_ENDPOINT
+					apiEndpoint: mockServer.url
 				, (error, deviceInfo) ->
 					expect(error).to.not.exist
 					expect(deviceInfo).to.deep.equal
@@ -101,6 +102,6 @@ describe 'Device Register:', ->
 					deviceType: 'raspberry-pi'
 					deviceApiKey: register.generateUniqueKey()
 					provisioningApiKey: PROVISIONING_KEY
-					apiEndpoint: API_ENDPOINT
+					apiEndpoint: mockServer.url
 
 				expect(promise).to.eventually.deep.equal(id: 999)
