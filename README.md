@@ -7,7 +7,6 @@ balena-register-device
 [![dependencies](https://david-dm.org/balena-io-modules/balena-register-device.svg)](https://david-dm.org/balena-io-modules/balena-register-device.svg)
 [![Build Status](https://travis-ci.org/balena-io-modules/balena-register-device.svg?branch=master)](https://travis-ci.org/balena-io-modules/balena-register-device)
 [![Build status](https://ci.appveyor.com/api/projects/status/uh8bg45pxxyx2qif/branch/master?svg=true)](https://ci.appveyor.com/project/resin-io/balena-register-device/branch/master)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/resin-io/chat)
 
 Installation
 ------------
