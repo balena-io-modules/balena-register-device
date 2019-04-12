@@ -5,6 +5,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 6.0.0 - 2019-04-12
+
+* Use a prepare step that doesn't run tests, to be balenaCI compliant [Thodoris Greasidis]
+* Tests: Disable node 10 on appveyor since a warning is inferred as error [Thodoris Greasidis]
+* Drop node 4 in favor of 8 & 10 on appveyor & travis [Thodoris Greasidis]
+* Tests: Use balena-config-karma to get balenaCI compliance [Thodoris Greasidis]
+* Tests: Use headless Chrome instead of phantomjs [Thodoris Greasidis]
+* Tests: Use mockttp to test real requests, instead of fetch-mock [Thodoris Greasidis]
+* Exclude the build output from the repo [Thodoris Greasidis]
+* Rename everything 'resin' to 'balena' [Thodoris Greasidis]
+
 ### Changed
 
 - Updated resin-request peer dependency to ^9.0.2
