@@ -1,5 +1,5 @@
 ###
-Copyright 2016 Resin.io
+Copyright 2016 Balena
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@ Promise = require('bluebird')
 randomstring = require('randomstring')
 
 ###*
-# @summary Creates a Resin Register Device instance
+# @summary Creates a Balena Register Device instance
 # @function
 # @public
 #
-# @returns {Object} Resin Register Device instance { generateUniqueKey: ..., register: ... }
+# @returns {Object} Balena Register Device instance { generateUniqueKey: ..., register: ... }
 ###
 module.exports = ({ request }) ->
 	###*
@@ -51,7 +51,7 @@ module.exports = ({ request }) ->
 		)
 
 	###*
-	# @summary Register a device with Resin.io
+	# @summary Register a device with Balena
 	# @function
 	# @public
 	#
@@ -76,7 +76,7 @@ module.exports = ({ request }) ->
 	#		deviceType: 'raspberry-pi'
 	#		deviceApiKey: '...'
 	#		provisioningApiKey: '...'
-	#		apiEndpoint: 'https://api.resin.io'
+	#		apiEndpoint: 'https://api.balena-cloud.com'
 	#	, (error, deviceInfo) ->
 	#		throw error if error?
 	#		console.log(deviceInfo) # { id }

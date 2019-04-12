@@ -1,32 +1,31 @@
-resin-register-device
+balena-register-device
 =====================
 
-> Resin.io device registration utilities.
+> Balena device registration utilities.
 
-[![npm version](https://badge.fury.io/js/resin-register-device.svg)](http://badge.fury.io/js/resin-register-device)
-[![dependencies](https://david-dm.org/resin-io-modules/resin-register-device.svg)](https://david-dm.org/resin-io-modules/resin-register-device.svg)
-[![Build Status](https://travis-ci.org/resin-io-modules/resin-register-device.svg?branch=master)](https://travis-ci.org/resin-io-modules/resin-register-device)
-[![Build status](https://ci.appveyor.com/api/projects/status/uh8bg45pxxyx2qif/branch/master?svg=true)](https://ci.appveyor.com/project/resin-io/resin-register-device/branch/master)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/resin-io/chat)
+[![npm version](https://badge.fury.io/js/balena-register-device.svg)](http://badge.fury.io/js/balena-register-device)
+[![dependencies](https://david-dm.org/balena-io-modules/balena-register-device.svg)](https://david-dm.org/balena-io-modules/balena-register-device.svg)
+[![Build Status](https://travis-ci.org/balena-io-modules/balena-register-device.svg?branch=master)](https://travis-ci.org/balena-io-modules/balena-register-device)
+[![Build status](https://ci.appveyor.com/api/projects/status/uh8bg45pxxyx2qif/branch/master?svg=true)](https://ci.appveyor.com/project/resin-io/balena-register-device/branch/master)
 
 Installation
 ------------
 
-Install `resin-register-device` by running:
+Install `balena-register-device` by running:
 
 ```sh
-$ npm install --save resin-register-device
+$ npm install --save balena-register-device
 ```
 
 Documentation
 -------------
 
-Resin-Register-Device exports a factory function, which must be called with a dependencies object, containing a configured [`resin-request`](https://github.com/resin-io-modules/resin-request) instance.
+Balena-Register-Device exports a factory function, which must be called with a dependencies object, containing a configured [`balena-request`](https://github.com/balena-io-modules/balena-request) instance.
 
 Example:
 ```coffee
-deviceRegister = require('resin-register-device')({
-	request: request # An instantiated resin-request instance
+deviceRegister = require('balena-register-device')({
+	request: request # An instantiated balena-request instance
 })
 ```
 
@@ -43,7 +42,7 @@ console.log(randomKey)
 
 ### deviceRegister.register(Object options, Function callback)
 
-Register a device with Resin.io.
+Register a device with Balena.
 
 **Notice**: You can use this function as a promise if you omit the `callback` argument.
 
@@ -69,7 +68,7 @@ deviceRegister.register
 		deviceType: 'raspberry-pi'
 		deviceApiKey: '...'
 		provisioningApiKey: '...'
-		apiEndpoint: 'https://api.resin.io'
+		apiEndpoint: 'https://api.balena-cloud.com'
 	, (error, deviceInfo) ->
 		throw error if error?
 		console.log(deviceInfo) # { id }
@@ -87,8 +86,8 @@ $ npm test
 Contribute
 ----------
 
-- Issue Tracker: [github.com/resin-io-modules/resin-register-device/issues](https://github.com/resin-io-modules/resin-register-device/issues)
-- Source Code: [github.com/resin-io-modules/resin-register-device](https://github.com/resin-io-modules/resin-register-device)
+- Issue Tracker: [github.com/balena-io-modules/balena-register-device/issues](https://github.com/balena-io-modules/balena-register-device/issues)
+- Source Code: [github.com/balena-io-modules/balena-register-device](https://github.com/balena-io-modules/balena-register-device)
 
 Before submitting a PR, please make sure that you include tests, and that [coffeelint](http://www.coffeelint.org/) runs without any warning:
 
@@ -99,7 +98,7 @@ $ npm run lint
 Support
 -------
 
-If you're having any problem, please [raise an issue](https://github.com/resin-io-modules/resin-register-device/issues/new) on GitHub.
+If you're having any problem, please [raise an issue](https://github.com/balena-io-modules/balena-register-device/issues/new) on GitHub.
 
 License
 -------
