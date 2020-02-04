@@ -15,9 +15,9 @@ describe 'Device Register:', ->
 
 	describe '.generateUniqueKey()', ->
 
-		it 'should return a string that has a length of 62 (31 bytes)', ->
+		it 'should return a string that has a length of 32 (16 bytes)', ->
 			uniqueKey = register.generateUniqueKey()
-			expect(uniqueKey).to.be.a('string').that.has.lengthOf(62)
+			expect(uniqueKey).to.be.a('string').that.has.lengthOf(32)
 
 		it 'should generate different unique key each time', ->
 			uniqueKeys = _.times(3, register.generateUUID)
