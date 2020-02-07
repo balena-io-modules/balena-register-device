@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 6.0.1 - 2020-02-04
+
+* GenerateUniqueKey: Reduce generated UUID size to 16 bytes. [James Harton]
+
 ## 6.0.0 - 2019-04-12
 
 * Use a prepare step that doesn't run tests, to be balenaCI compliant [Thodoris Greasidis]
