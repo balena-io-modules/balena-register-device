@@ -38,15 +38,8 @@ module.exports = ({ request }) ->
 	# console.log(randomKey)
 	###
 	generateUniqueKey: ->
-		# It'd be nice if the random key matched the output of a SHA-256 function,
-		# but for the purposes of a uuid we are limited by the fact that
-		# although the length limit of the CN attribute in a X.509
-		# certificate is 64 chars, a 32 byte UUID (64 chars in hex) doesn't
-		# pass the certificate validation in OpenVPN This either means that
-		# the RFC counts a final NULL byte as part of the CN or that the
-		# OpenVPN/OpenSSL implementation has a bug.
 		return randomstring.generate(
-			length: 62
+			length: 32
 			charset: 'hex'
 		)
 
