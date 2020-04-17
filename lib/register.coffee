@@ -52,7 +52,7 @@ module.exports = ({ request }) ->
 	# This function allows promise style if the callback is omitted.
 	#
 	# @param {Object} options - options
-	# @param {Number} options.userId - user id
+	# @param {Number} [options.userId] - user id
 	# @param {Number} options.applicationId - application id
 	# @param {String} options.uuid - device uuid
 	# @param {String} options.deviceType - device type
@@ -75,7 +75,7 @@ module.exports = ({ request }) ->
 	#		console.log(deviceInfo) # { id }
 	###
 	register: Promise.method (options, callback) ->
-		for opt in [ 'userId', 'applicationId', 'uuid', 'deviceType', 'provisioningApiKey', 'apiEndpoint' ]
+		for opt in [ 'applicationId', 'uuid', 'deviceType', 'provisioningApiKey', 'apiEndpoint' ]
 			if !options[opt]?
 				throw new Error("Options must contain a '#{opt}' entry.")
 

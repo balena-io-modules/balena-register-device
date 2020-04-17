@@ -20,10 +20,10 @@ gulp.task 'test', ->
 			reporter: 'landing'
 		}))
 
-gulp.task 'build', [
+gulp.task 'build', gulp.series [
 	'test'
 	'coffee'
 ]
 
-gulp.task 'watch', [ 'build' ], ->
+gulp.task 'watch', gulp.series 'build', ->
 	gulp.watch(OPTIONS.files.coffee, [ 'build' ])
