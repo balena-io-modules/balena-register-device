@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.0
+## (2020-04-17)
+
+* Make user id optional [Pagan Gazzard]
+
 ## 6.0.1 - 2020-02-04
 
 * GenerateUniqueKey: Reduce generated UUID size to 16 bytes. [James Harton]
