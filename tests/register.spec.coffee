@@ -29,7 +29,9 @@ describe 'Device Register:', ->
 
 		before ->
 			mockServer.start().then ->
-				mockServer.post("/device/register?apikey=#{PROVISIONING_KEY}").thenCallback (req) ->
+				mockServer.post('/device/register').thenCallback (req) ->
+					if req.headers.authorization != "Bearer #{PROVISIONING_KEY}"
+						throw new Error("No or incorrect authorization header: #{req.headers.authorization}")
 					user = JSON.parse(req.body.text).user
 					switch user
 						when 1
