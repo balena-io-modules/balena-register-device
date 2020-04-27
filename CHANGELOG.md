@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.1
+## (2020-04-27)
+
+* Prevent balena-request from overwriting the authorization header [Thodoris Greasidis]
+* Send the api key within the Authorisation header [Cameron Diver]
+
 # v6.1.0
 ## (2020-04-17)
 
