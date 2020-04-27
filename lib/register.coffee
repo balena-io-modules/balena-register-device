@@ -84,7 +84,9 @@ module.exports = ({ request }) ->
 			baseUrl: options.apiEndpoint
 			url: '/device/register'
 			refreshToken: false
-			apiKey: options.provisioningApiKey
+			sendToken: false
+			headers:
+				Authorization: "Bearer #{options.provisioningApiKey}"
 			timeout: 30000
 			body:
 				user: options.userId
