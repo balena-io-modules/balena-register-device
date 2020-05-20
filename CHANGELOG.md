@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.2
+## (2020-05-20)
+
+* Update mocha to fix node v12 deprecation warning [Thodoris Greasidis]
+
 # v6.1.1
 ## (2020-04-27)
 
