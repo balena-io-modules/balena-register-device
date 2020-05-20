@@ -18,6 +18,7 @@ gulp.task 'test', ->
 	gulp.src(OPTIONS.files.tests, read: false)
 		.pipe(mocha({
 			reporter: 'landing'
+			require: ['coffeescript/register']
 		}))
 
 gulp.task 'build', gulp.series [
