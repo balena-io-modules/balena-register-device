@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.3
+## (2020-05-20)
+
+* Extend API exception to include full response object [Miguel Casqueira]
+
 # v6.1.2
 ## (2020-05-20)
 
