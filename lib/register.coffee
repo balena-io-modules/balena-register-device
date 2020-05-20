@@ -16,6 +16,7 @@ limitations under the License.
 
 Promise = require('bluebird')
 randomstring = require('randomstring')
+{ TypedError } = require 'typed-error'
 
 ###*
 # @summary Creates a Balena Register Device instance
@@ -96,7 +97,11 @@ module.exports = ({ request }) ->
 				api_key: options.deviceApiKey
 		.tap (response) ->
 			if response.statusCode isnt 201
-				throw new Error(response.body)
+				throw new ApiError(response.body, response)
 		.get('body')
 		# Allow promise based and callback based styles
 		.asCallback(callback)
+
+class ApiError extends TypedError
+	constructor: (message = 'Error with API request', @response) ->
+		super(@message)
