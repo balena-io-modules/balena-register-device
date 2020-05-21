@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.4
+## (2020-05-21)
+
+* Install typed-error v2 [Cameron Diver]
+
 # v6.1.3
 ## (2020-05-20)
 
