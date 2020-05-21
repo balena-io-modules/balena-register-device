@@ -16,7 +16,7 @@ limitations under the License.
 
 Promise = require('bluebird')
 randomstring = require('randomstring')
-{ TypedError } = require 'typed-error'
+TypedError = require 'typed-error'
 
 ###*
 # @summary Creates a Balena Register Device instance
