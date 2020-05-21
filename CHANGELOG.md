@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.5
+## (2020-05-21)
+
+* Convert tests to js [Thodoris Greasidis]
+
 # v6.1.4
 ## (2020-05-21)
 
