@@ -5,9 +5,9 @@ coffee = require('gulp-coffee')
 
 OPTIONS =
 	files:
-		coffee: [ 'lib/**/*.coffee', 'tests/**/*.spec.coffee', 'gulpfile.coffee' ]
+		coffee: [ 'lib/**/*.coffee', 'gulpfile.coffee' ]
 		app: 'lib/**/*.coffee'
-		tests: 'tests/**/*.spec.coffee'
+		tests: 'tests/**/*.spec.js'
 
 gulp.task 'coffee', ->
 	gulp.src(OPTIONS.files.app)
