@@ -71,6 +71,7 @@ describe('Device Register:', function () {
 						apiEndpoint: mockServer.url,
 					},
 					function (error, deviceInfo) {
+						expect(error.statusCode).to.equal(401);
 						expect(error).to.be.instanceof(errors.BalenaRequestError);
 						expect(error).to.have.a.property(
 							'message',
