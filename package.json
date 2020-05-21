@@ -22,7 +22,9 @@
   },
   "scripts": {
     "build": "gulp build",
-    "lint": "balena-lint lib tests gulpfile.coffee",
+    "lint:coffee": "balena-lint lib gulpfile.coffee",
+    "lint:js": "balena-lint -e js --typescript tests",
+    "lint": "npm run lint:coffee && npm run lint:js",
     "test-node": "gulp test",
     "test-browser": "mockttp -c karma start",
     "test": "npm run lint && npm run test-node && npm run test-browser",
