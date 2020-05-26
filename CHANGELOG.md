@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v6.1.6
+## (2020-05-26)
+
+* Export ApiError [Cameron Diver]
+
 # v6.1.5
 ## (2020-05-21)
 
