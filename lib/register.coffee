@@ -102,6 +102,6 @@ module.exports = ({ request }) ->
 		# Allow promise based and callback based styles
 		.asCallback(callback)
 
-class ApiError extends TypedError
+module.exports.ApiError = class ApiError extends TypedError
 	constructor: (message = 'Error with API request', @response) ->
 		super(@message)
