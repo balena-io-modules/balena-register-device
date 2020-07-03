@@ -7,7 +7,7 @@ const getRequest = require('balena-request');
 const mockServer = require('mockttp').getLocal();
 
 const request = getRequest();
-const register = require('../lib/register')({ request });
+const register = require('../build/register')({ request });
 
 const PROVISIONING_KEY = 'abcd';
 
