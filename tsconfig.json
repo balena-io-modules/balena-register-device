@@ -17,6 +17,7 @@
             "node_modules/@resin.io"
         ],
         "skipLibCheck": true,
+        "importHelpers": true
     },
     "include": [
         "lib/**/*",
