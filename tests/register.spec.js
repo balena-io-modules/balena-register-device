@@ -59,9 +59,9 @@ describe('Device Register:', function () {
 		after(() => mockServer.stop());
 
 		describe('given the post operation is unsuccessful', function () {
-			it('should return an error to the callback', function (done) {
-				register.register(
-					{
+			it('should return an error to the callback', function () {
+				return register
+					.register({
 						userId: 1,
 						applicationId: 10350,
 						uuid: register.generateUniqueKey(),
@@ -69,17 +69,17 @@ describe('Device Register:', function () {
 						deviceApiKey: register.generateUniqueKey(),
 						provisioningApiKey: PROVISIONING_KEY,
 						apiEndpoint: mockServer.url,
-					},
-					function (error, deviceInfo) {
+					})
+					.then(() => {
+						throw new Error('Succeeded');
+					})
+					.catch(function (error) {
 						expect(error).to.be.instanceof(errors.BalenaRequestError);
 						expect(error).to.have.a.property(
 							'message',
 							'Request error: Unauthorized',
 						);
-						expect(deviceInfo).to.not.exist;
-						done();
-					},
-				);
+					});
 			});
 
 			it('should return a rejected promise', function () {
@@ -101,9 +101,9 @@ describe('Device Register:', function () {
 		});
 
 		describe('given the post operation is successful', function () {
-			it('should return the resulting device info', function (done) {
-				register.register(
-					{
+			it('should return the resulting device info', function () {
+				return register
+					.register({
 						userId: 2,
 						applicationId: 10350,
 						uuid: register.generateUniqueKey(),
@@ -111,15 +111,12 @@ describe('Device Register:', function () {
 						deviceApiKey: register.generateUniqueKey(),
 						provisioningApiKey: PROVISIONING_KEY,
 						apiEndpoint: mockServer.url,
-					},
-					function (error, deviceInfo) {
-						expect(error).to.not.exist;
+					})
+					.then(function (deviceInfo) {
 						expect(deviceInfo).to.deep.equal({
 							id: 999,
 						});
-						done();
-					},
-				);
+					});
 			});
 
 			it('should return a promise that resolves to the device info', function () {
