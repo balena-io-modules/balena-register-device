@@ -16,7 +16,7 @@ limitations under the License.
 
 import * as Promise from 'bluebird';
 import * as randomstring from 'randomstring';
-import TypedError = require('typed-error');
+import {TypedError} from 'typed-error';
 
 interface SendResponse {
 	statusCode: number;
