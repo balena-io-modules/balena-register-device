@@ -14,9 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import * as Promise from 'bluebird';
 import * as randomstring from 'randomstring';
-import {TypedError} from 'typed-error';
+import { TypedError } from 'typed-error';
 
 interface SendResponse {
 	statusCode: number;
@@ -94,7 +93,7 @@ export const getRegisterDevice = ({
 	 * 	.then (deviceInfo) ->
 	 * 		console.log(deviceInfo) # { id }
 	 */
-	register: Promise.method(function (options: {
+	async register(options: {
 		userId?: number;
 		applicationId: number;
 		uuid: string;
@@ -115,32 +114,29 @@ export const getRegisterDevice = ({
 			}
 		}
 
-		return request
-			.send({
-				method: 'POST',
-				baseUrl: options.apiEndpoint,
-				url: '/device/register',
-				refreshToken: false,
-				sendToken: false,
-				headers: {
-					Authorization: `Bearer ${options.provisioningApiKey}`,
-				},
-				timeout: 30000,
-				body: {
-					user: options.userId,
-					application: options.applicationId,
-					uuid: options.uuid,
-					device_type: options.deviceType,
-					api_key: options.deviceApiKey,
-				},
-			})
-			.tap(function (response) {
-				if (response.statusCode !== 201) {
-					throw new ApiError(response.body, response);
-				}
-			})
-			.get('body');
-	}),
+		const response = await request.send({
+			method: 'POST',
+			baseUrl: options.apiEndpoint,
+			url: '/device/register',
+			refreshToken: false,
+			sendToken: false,
+			headers: {
+				Authorization: `Bearer ${options.provisioningApiKey}`,
+			},
+			timeout: 30000,
+			body: {
+				user: options.userId,
+				application: options.applicationId,
+				uuid: options.uuid,
+				device_type: options.deviceType,
+				api_key: options.deviceApiKey,
+			},
+		});
+		if (response.statusCode !== 201) {
+			throw new ApiError(response.body, response);
+		}
+		return response.body;
+	},
 });
 
 export class ApiError extends TypedError {
