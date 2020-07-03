@@ -16,7 +16,12 @@ limitations under the License.
 
 import * as Promise from 'bluebird';
 import * as randomstring from 'randomstring';
-const TypedError = require('typed-error');
+import TypedError = require('typed-error');
+
+interface SendResponse {
+	statusCode: number;
+	body: any;
+}
 
 /**
  * @summary Creates a Balena Register Device instance
@@ -25,7 +30,25 @@ const TypedError = require('typed-error');
  *
  * @returns {Object} Balena Register Device instance { generateUniqueKey: ..., register: ... }
  */
-export const getRegisterDevice = ({ request }) => ({
+export const getRegisterDevice = ({
+	request,
+}: {
+	request: {
+		send: (opts: {
+			method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'OPTIONS';
+			baseUrl?: string;
+			url: string;
+			refreshToken?: boolean;
+			sendToken?: boolean;
+			body?: any;
+			responseFormat?: 'none' | 'blob' | 'json' | 'text';
+			headers: {
+				[key: string]: string;
+			};
+			timeout: number;
+		}) => Promise<SendResponse>;
+	};
+}) => ({
 	/**
 	 * @summary Generate a random key, useful for both uuid and api key.
 	 * @function
@@ -71,14 +94,22 @@ export const getRegisterDevice = ({ request }) => ({
 	 * 	.then (deviceInfo) ->
 	 * 		console.log(deviceInfo) # { id }
 	 */
-	register: Promise.method(function (options) {
-		for (let opt of [
+	register: Promise.method(function (options: {
+		userId?: number;
+		applicationId: number;
+		uuid: string;
+		deviceType: string;
+		deviceApiKey?: string;
+		provisioningApiKey: string;
+		apiEndpoint: string;
+	}) {
+		for (const opt of [
 			'applicationId',
 			'uuid',
 			'deviceType',
 			'provisioningApiKey',
 			'apiEndpoint',
-		]) {
+		] as const) {
 			if (options[opt] == null) {
 				throw new Error(`Options must contain a '${opt}' entry.`);
 			}
@@ -113,8 +144,10 @@ export const getRegisterDevice = ({ request }) => ({
 });
 
 export class ApiError extends TypedError {
-	constructor(message = 'Error with API request', response) {
+	constructor(
+		message = 'Error with API request',
+		public response: SendResponse,
+	) {
 		super(message);
-		this.response = response;
 	}
 }

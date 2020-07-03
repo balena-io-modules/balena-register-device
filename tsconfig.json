@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "declaration": false,
+        "declaration": true,
         "outDir": "build",
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "removeComments": false,
         "preserveConstEnums": true,
         "strictNullChecks": true,
@@ -17,8 +17,6 @@
             "node_modules/@resin.io"
         ],
         "skipLibCheck": true,
-        "allowJs": true,
-        "checkJs": true
     },
     "include": [
         "lib/**/*",
