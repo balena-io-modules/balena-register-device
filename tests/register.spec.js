@@ -3,10 +3,10 @@ const chai = require('chai');
 const { expect } = chai;
 chai.use(require('chai-as-promised'));
 const errors = require('balena-errors');
-const getRequest = require('balena-request');
+const { getRequest } = require('balena-request');
 const mockServer = require('mockttp').getLocal();
 
-const request = getRequest();
+const request = getRequest({});
 const register = require('../build/register').getRegisterDevice({ request });
 
 const PROVISIONING_KEY = 'abcd';
