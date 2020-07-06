@@ -5,6 +5,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v7.0.0
+## (2020-07-06)
+
+* Update to balena-request 11.x [Pagan Gazzard]
+* Switch to returning native promises [Pagan Gazzard]
+* Update to typed-error 3.x [Pagan Gazzard]
+* Convert to typescript [Pagan Gazzard]
+* Switch to a named export [Pagan Gazzard]
+* Drop callback interface in favor of promise interface [Pagan Gazzard]
+
 # v6.1.6
 ## (2020-05-26)
 
