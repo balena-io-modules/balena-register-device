@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "build",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "strictNullChecks": true,
+        "sourceMap": false,
+        "target": "es2015",
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "moduleResolution": "node",
+        "typeRoots": [
+            "node_modules/@types",
+            "node_modules/@resin.io"
+        ],
+        "skipLibCheck": true,
+        "importHelpers": true
+    },
+    "include": [
+        "lib/**/*",
+    ]
+}
