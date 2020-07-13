@@ -1,4 +1,14 @@
 - commits:
+    - subject: Switch from randomstring to uuid for generating device uuids
+      hash: 596a76abcf0a76aef93d191e4c59b939701c80b8
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Pagan Gazzard
+  version: 7.1.0
+  date: 2020-07-13T14:38:52.915Z
+- commits:
     - subject: Add .versionbot/CHANGELOG.yml for nested changelogs
       hash: 7444f4ba2538180a5c75fa5f62de6f395ae28ba7
       body: ''
