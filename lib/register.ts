@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import * as randomstring from 'randomstring';
+import { v4 as uuidv4 } from 'uuid';
 import { TypedError } from 'typed-error';
 
 interface SendResponse {
@@ -61,10 +61,7 @@ export const getRegisterDevice = ({
 	 * console.log(randomKey)
 	 */
 	generateUniqueKey() {
-		return randomstring.generate({
-			length: 32,
-			charset: 'hex',
-		});
+		return uuidv4().replace(/\-/g, '');
 	},
 
 	/**
