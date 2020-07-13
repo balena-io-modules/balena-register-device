@@ -1,312 +1,327 @@
 - commits:
-  - author: Pagan Gazzard
-    body: ""
-    hash: 8cfa23ebbe2915b2f37730972cf104cb47f68c65
-    subject: Convert to type checked javascript
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: major
-    hash: 0f3e9d26f375554f793dd632b94f33e3ee88933b
-    subject: Drop callback interface in favor of promise interface
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: major
-    hash: 67d46678e910c2c8b11f417fa40d00781a1a3905
-    subject: Switch to a named export
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: major
-    hash: faa9edc73cf243acd2abe1532e64aab8303031b5
-    subject: Convert to typescript
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: major
-    hash: 9e5bdbeaee325c8a523c8498ef023baeb49ef7c1
-    subject: Update to typed-error 3.x
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: major
-    hash: 27e78f2ea3f1a059a9fb2ba43dff55f32b0b2b4a
-    subject: Switch to returning native promises
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: major
-    hash: dc21eb20dba1a977e74ffadbece66720ced4c529
-    subject: Update to balena-request 11.x
-  - author: Pagan Gazzard
-    body: ""
-    hash: f4008dad3de415cc25987268b387848fc3ed1200
-    subject: Use typescript import helpers
-  date: "2020-07-06T18:11:23Z"
+    - subject: Add .versionbot/CHANGELOG.yml for nested changelogs
+      hash: 7444f4ba2538180a5c75fa5f62de6f395ae28ba7
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+  version: 7.0.1
+  date: 2020-07-13T13:03:45.818Z
+- commits:
+    - author: Pagan Gazzard
+      body: ''
+      hash: 8cfa23ebbe2915b2f37730972cf104cb47f68c65
+      subject: Convert to type checked javascript
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: major
+      hash: 0f3e9d26f375554f793dd632b94f33e3ee88933b
+      subject: Drop callback interface in favor of promise interface
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: major
+      hash: 67d46678e910c2c8b11f417fa40d00781a1a3905
+      subject: Switch to a named export
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: major
+      hash: faa9edc73cf243acd2abe1532e64aab8303031b5
+      subject: Convert to typescript
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: major
+      hash: 9e5bdbeaee325c8a523c8498ef023baeb49ef7c1
+      subject: Update to typed-error 3.x
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: major
+      hash: 27e78f2ea3f1a059a9fb2ba43dff55f32b0b2b4a
+      subject: Switch to returning native promises
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: major
+      hash: dc21eb20dba1a977e74ffadbece66720ced4c529
+      subject: Update to balena-request 11.x
+    - author: Pagan Gazzard
+      body: ''
+      hash: f4008dad3de415cc25987268b387848fc3ed1200
+      subject: Use typescript import helpers
+  date: '2020-07-06T18:11:23Z'
   version: 7.0.0
 - commits:
-  - author: Cameron Diver
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Cameron Diver <cameron@balena.io>
-    hash: effa651684318e8b1e336058515f467be02a4de4
-    subject: Export ApiError
-  date: "2020-05-26T13:07:26Z"
+    - author: Cameron Diver
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      hash: effa651684318e8b1e336058515f467be02a4de4
+      subject: Export ApiError
+  date: '2020-05-26T13:07:26Z'
   version: 6.1.6
 - commits:
-  - author: Thodoris Greasidis
-    body: |-
-      Didn't convert the source, so that we don't end up
-      having conflicts with other ongoing PRs.
-    footers:
-      change-type: patch
-    hash: d2b9af51ae9714bc076d41a1f980ba019cf9e66a
-    subject: Convert tests to js
-  date: "2020-05-21T14:46:17Z"
+    - author: Thodoris Greasidis
+      body: |-
+        Didn't convert the source, so that we don't end up
+        having conflicts with other ongoing PRs.
+      footers:
+        change-type: patch
+      hash: d2b9af51ae9714bc076d41a1f980ba019cf9e66a
+      subject: Convert tests to js
+  date: '2020-05-21T14:46:17Z'
   version: 6.1.5
 - commits:
-  - author: Cameron Diver
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Cameron Diver <cameron@balena.io>
-    hash: f2be03b8cafe3dbfda30b9abf9cb7ec5a73aff0b
-    subject: Install typed-error v2
-  date: "2020-05-21T11:06:32Z"
+    - author: Cameron Diver
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      hash: f2be03b8cafe3dbfda30b9abf9cb7ec5a73aff0b
+      subject: Install typed-error v2
+  date: '2020-05-21T11:06:32Z'
   version: 6.1.4
 - commits:
-  - author: Miguel Casqueira
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Miguel Casqueira <miguel@balena.io>
-    hash: bc79dbddf3e57081e9bb71e348c9ae6375c17ffc
-    subject: Extend API exception to include full response object
-  date: "2020-05-20T12:23:42Z"
+    - author: Miguel Casqueira
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Miguel Casqueira <miguel@balena.io>
+      hash: bc79dbddf3e57081e9bb71e348c9ae6375c17ffc
+      subject: Extend API exception to include full response object
+  date: '2020-05-20T12:23:42Z'
   version: 6.1.3
 - commits:
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      see: https://www.flowdock.com/app/rulemotion/r-supervisor/threads/KkFyAM4y7FbvbEOMtnoHdkCcz7p
-    hash: a6677fab4254f1f3a303ff4b8bdabcb3f2f631db
-    subject: Update mocha to fix node v12 deprecation warning
-  date: "2020-05-20T10:59:05Z"
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        see: >-
+          https://www.flowdock.com/app/rulemotion/r-supervisor/threads/KkFyAM4y7FbvbEOMtnoHdkCcz7p
+      hash: a6677fab4254f1f3a303ff4b8bdabcb3f2f631db
+      subject: Update mocha to fix node v12 deprecation warning
+  date: '2020-05-20T10:59:05Z'
   version: 6.1.2
 - commits:
-  - author: Cameron Diver
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Cameron Diver <cameron@balena.io>
-    hash: 89b019c77189abbaf53eb97856318e29da8df017
-    subject: Send the api key within the Authorisation header
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: acbbc37225033cf3b849f6a122743e3dcb37ea3c
-    subject: Prevent balena-request from overwriting the authorization header
-  date: "2020-04-27T16:31:51Z"
+    - author: Cameron Diver
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Cameron Diver <cameron@balena.io>
+      hash: 89b019c77189abbaf53eb97856318e29da8df017
+      subject: Send the api key within the Authorisation header
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: acbbc37225033cf3b849f6a122743e3dcb37ea3c
+      subject: Prevent balena-request from overwriting the authorization header
+  date: '2020-04-27T16:31:51Z'
   version: 6.1.1
 - commits:
-  - author: Pagan Gazzard
-    body: ""
-    footers:
-      change-type: minor
-    hash: 1f6978365bab7d6067ba71f7464a890ca8dc05af
-    subject: Make user id optional
-  - author: Pagan Gazzard
-    body: ""
-    hash: 9fbce4bec49a406c2d42a07bb870fa275e6f4f34
-    subject: Update ci config to target node 10/12
-  date: "2020-04-17T16:35:37Z"
+    - author: Pagan Gazzard
+      body: ''
+      footers:
+        change-type: minor
+      hash: 1f6978365bab7d6067ba71f7464a890ca8dc05af
+      subject: Make user id optional
+    - author: Pagan Gazzard
+      body: ''
+      hash: 9fbce4bec49a406c2d42a07bb870fa275e6f4f34
+      subject: Update ci config to target node 10/12
+  date: '2020-04-17T16:35:37Z'
   version: 6.1.0
 - commits:
-  - author: James Harton
-    body: Modify the generated UUID length from 62 to 32 characters to match [4e5379](https://github.com/balena-os/meta-balena/commit/4e537949ce9131f2e47d8e24ac5e366e31e38dd6).
-    footers:
-      change-type: patch
-      signed-off-by: James Harton <james@balena.io>
-    hash: 6044ef0ed93f0aba05dc92be3351f4f147ac973b
-    subject: 'generateUniqueKey: Reduce generated UUID size to 16 bytes.'
-  date: "2020-02-07T14:37:47Z"
+    - author: James Harton
+      body: >-
+        Modify the generated UUID length from 62 to 32 characters to match
+        [4e5379](https://github.com/balena-os/meta-balena/commit/4e537949ce9131f2e47d8e24ac5e366e31e38dd6).
+      footers:
+        change-type: patch
+        signed-off-by: James Harton <james@balena.io>
+      hash: 6044ef0ed93f0aba05dc92be3351f4f147ac973b
+      subject: 'generateUniqueKey: Reduce generated UUID size to 16 bytes.'
+  date: '2020-02-07T14:37:47Z'
   version: 6.0.1
 - commits:
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: major
-      resolves: '#36'
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 622790ae148b9b00da4ef682bb81f6756e8d6669
-    subject: Rename everything 'resin' to 'balena'
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: da14e8eb3743f2ac5a9c98eb4c2508bd06b310d5
-    subject: 'tests: Use mockttp to test real requests, instead of fetch-mock'
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 8b2070cea70c0291af6d615f8a914bdfcdd7369b
-    subject: 'tests: Use headless Chrome instead of phantomjs'
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 4f34b24dcb05bdd45b1999997cfe3019fd9ef443
-    subject: 'tests: Use balena-config-karma to get balenaCI compliance'
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: major
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 98f51c32b412e8b6c7a5faac29fd8d55b1376914
-    subject: Exclude the build output from the repo
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 107a31efb36f7c18129707fa1d01bfd8d1920b17
-    subject: 'README: Drop Gitter badge'
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 2ed531779d0759e0c98e0fcae940e584dff201e8
-    subject: Drop node 4 in favor of 8 & 10 on appveyor & travis
-  - author: Thodoris Greasidis
-    body: |-
-      That's even though the tests do complete
-      successfully.
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: 721fc927f450009e5998cc909971aac1766f2556
-    subject: 'tests: Disable node 10 on appveyor since a warning is inferred as error'
-  - author: Thodoris Greasidis
-    body: ""
-    footers:
-      change-type: patch
-      signed-off-by: Thodoris Greasidis <thodoris@balena.io>
-    hash: be77c4358f8f6fefbcaebac3ba89f3e94fc21c2b
-    subject: Use a prepare step that doesn't run tests, to be balenaCI compliant
-  date: "2019-04-12T14:50:39Z"
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: major
+        resolves: '#36'
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 622790ae148b9b00da4ef682bb81f6756e8d6669
+      subject: Rename everything 'resin' to 'balena'
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: da14e8eb3743f2ac5a9c98eb4c2508bd06b310d5
+      subject: 'tests: Use mockttp to test real requests, instead of fetch-mock'
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 8b2070cea70c0291af6d615f8a914bdfcdd7369b
+      subject: 'tests: Use headless Chrome instead of phantomjs'
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 4f34b24dcb05bdd45b1999997cfe3019fd9ef443
+      subject: 'tests: Use balena-config-karma to get balenaCI compliance'
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: major
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 98f51c32b412e8b6c7a5faac29fd8d55b1376914
+      subject: Exclude the build output from the repo
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 107a31efb36f7c18129707fa1d01bfd8d1920b17
+      subject: 'README: Drop Gitter badge'
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 2ed531779d0759e0c98e0fcae940e584dff201e8
+      subject: Drop node 4 in favor of 8 & 10 on appveyor & travis
+    - author: Thodoris Greasidis
+      body: |-
+        That's even though the tests do complete
+        successfully.
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: 721fc927f450009e5998cc909971aac1766f2556
+      subject: 'tests: Disable node 10 on appveyor since a warning is inferred as error'
+    - author: Thodoris Greasidis
+      body: ''
+      footers:
+        change-type: patch
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      hash: be77c4358f8f6fefbcaebac3ba89f3e94fc21c2b
+      subject: 'Use a prepare step that doesn''t run tests, to be balenaCI compliant'
+  date: '2019-04-12T14:50:39Z'
   version: 6.0.0
 - commits:
-  - author: Alexis Svinartchouk
-    body: 'Connects-To: #33'
-    footers:
-      change-type: major
-    hash: cf4244c02b1a2ae17d9ce14e82d06108c16dc66b
-    subject: Update resin-request peer dependency to ^9.0.2
-  date: "2018-01-25T18:09:41Z"
+    - author: Alexis Svinartchouk
+      body: 'Connects-To: #33'
+      footers:
+        change-type: major
+      hash: cf4244c02b1a2ae17d9ce14e82d06108c16dc66b
+      subject: Update resin-request peer dependency to ^9.0.2
+  date: '2018-01-25T18:09:41Z'
   version: 5.0.0
 - commits:
-  - author: Alexis Svinartchouk
-    body: 'Connects-To: #31'
-    footers:
-      change-type: patch
-    hash: 95ee4533a3de45e12e7394b617e69bdeb50c7896
-    subject: Fix tests
-  date: "2018-01-25T17:32:18Z"
+    - author: Alexis Svinartchouk
+      body: 'Connects-To: #31'
+      footers:
+        change-type: patch
+      hash: 95ee4533a3de45e12e7394b617e69bdeb50c7896
+      subject: Fix tests
+  date: '2018-01-25T17:32:18Z'
   version: 4.1.1
 - commits:
-  - author: Pagan Gazzard
-    body: ""
-    hash: f799b710807892c0ea27d262f7bf6486956ae723
-    subject: Update resin-request, removing the need to use a token in the provided
-      resin-request instance
-  date: "2017-04-10T23:33:59Z"
+    - author: Pagan Gazzard
+      body: ''
+      hash: f799b710807892c0ea27d262f7bf6486956ae723
+      subject: >-
+        Update resin-request, removing the need to use a token in the provided
+        resin-request instance
+  date: '2017-04-10T23:33:59Z'
   version: 4.1.0
 - commits:
-  - author: Eugene Mirotin
-    body: ""
-    hash: 48f75856571c4edea685c906425e834853d13a3f
-    subject: use resin-fetch-mock
-  - author: Eugene Mirotin
-    body: ""
-    hash: e5a34501214867d0dbecbfd13b3be23671dc08b3
-    subject: run tests in the browser
-  - author: Eugene Mirotin
-    body: ""
-    hash: c74ab975d5cd90d852ccf7b01fb10559d95cdd60
-    subject: changelog
-  date: "2017-01-06T17:55:02Z"
+    - author: Eugene Mirotin
+      body: ''
+      hash: 48f75856571c4edea685c906425e834853d13a3f
+      subject: use resin-fetch-mock
+    - author: Eugene Mirotin
+      body: ''
+      hash: e5a34501214867d0dbecbfd13b3be23671dc08b3
+      subject: run tests in the browser
+    - author: Eugene Mirotin
+      body: ''
+      hash: c74ab975d5cd90d852ccf7b01fb10559d95cdd60
+      subject: changelog
+  date: '2017-01-06T17:55:02Z'
   version: 4.0.1
 - commits:
-  - author: Tim Perry
-    body: ""
-    hash: 2749c37bdd4bc3bc02c87325d903734c24252f2f
-    subject: Move to new version of resin-request
-  - author: Tim Perry
-    body: ""
-    hash: 415269d65ed9619ba91997323b20ad79e5a8e6ff
-    subject: Enable 'Generated by CS' headers to improve github diffs
-  - author: Tim Perry
-    body: ""
-    hash: 21484d2ea834c36c3fd8ec27adfda3c62baf5848
-    subject: Build our own resin-request, don't expect it to be injected
-  - author: Tim Perry
-    body: ""
-    hash: 77da6f9d6f285858bf8fa33655311cd5f84d28c8
-    subject: Fix changelog links
-  - author: Tim Perry
-    body: ""
-    hash: 9ca39f080707f1b0745038f5a9548d8572eac63f
-    subject: Do tiny style tweaks after review
-  - author: Tim Perry
-    body: ""
-    hash: a097076583ec2c775799e45df814183e75be9d9a
-    subject: Move back to the DI approach, getting resin-request injected
-  - author: Tim Perry
-    body: ""
-    hash: 90d6166e7fb86041d97fd47c05cc35dca86953f2
-    subject: Remove unused resin-settings-client dep, now that we use a temp dir in
-      the tests
-  - author: Tim Perry
-    body: ""
-    hash: 3a2a827f21eff058cc9291da5a1acbf9dc28bd9b
-    subject: Upgrade to new resin-request version
-  - author: Tim Perry
-    body: ""
-    hash: a23f69871ac475f6ed49842a373f4b1e1b4145a0
-    subject: Update generateUniqueKey JSDoc to match recent changes
-  - author: Tim Perry
-    body: ""
-    hash: bdbe8d071f137016ceba570b7bdf9949f9305b22
-    subject: Make sure comment in docs examples is _double_ commented
-  date: "2017-01-05T14:33:15Z"
+    - author: Tim Perry
+      body: ''
+      hash: 2749c37bdd4bc3bc02c87325d903734c24252f2f
+      subject: Move to new version of resin-request
+    - author: Tim Perry
+      body: ''
+      hash: 415269d65ed9619ba91997323b20ad79e5a8e6ff
+      subject: Enable 'Generated by CS' headers to improve github diffs
+    - author: Tim Perry
+      body: ''
+      hash: 21484d2ea834c36c3fd8ec27adfda3c62baf5848
+      subject: 'Build our own resin-request, don''t expect it to be injected'
+    - author: Tim Perry
+      body: ''
+      hash: 77da6f9d6f285858bf8fa33655311cd5f84d28c8
+      subject: Fix changelog links
+    - author: Tim Perry
+      body: ''
+      hash: 9ca39f080707f1b0745038f5a9548d8572eac63f
+      subject: Do tiny style tweaks after review
+    - author: Tim Perry
+      body: ''
+      hash: a097076583ec2c775799e45df814183e75be9d9a
+      subject: 'Move back to the DI approach, getting resin-request injected'
+    - author: Tim Perry
+      body: ''
+      hash: 90d6166e7fb86041d97fd47c05cc35dca86953f2
+      subject: >-
+        Remove unused resin-settings-client dep, now that we use a temp dir in
+        the tests
+    - author: Tim Perry
+      body: ''
+      hash: 3a2a827f21eff058cc9291da5a1acbf9dc28bd9b
+      subject: Upgrade to new resin-request version
+    - author: Tim Perry
+      body: ''
+      hash: a23f69871ac475f6ed49842a373f4b1e1b4145a0
+      subject: Update generateUniqueKey JSDoc to match recent changes
+    - author: Tim Perry
+      body: ''
+      hash: bdbe8d071f137016ceba570b7bdf9949f9305b22
+      subject: Make sure comment in docs examples is _double_ commented
+  date: '2017-01-05T14:33:15Z'
   version: 4.0.0
 - commits:
-  - author: Pagan Gazzard
-    body: ""
-    hash: f0ce95acad180beddf39b1871c287163de91498a
-    subject: Update to work with the new device registration method.
-  date: "2016-10-04T22:49:55Z"
+    - author: Pagan Gazzard
+      body: ''
+      hash: f0ce95acad180beddf39b1871c287163de91498a
+      subject: Update to work with the new device registration method.
+  date: '2016-10-04T22:49:55Z'
   version: 3.0.0
 - commits:
-  - author: Eugene Mirotin
-    body: |-
-      update dev dependencies
-      use granular lodash imports
-      update node test versions
-    hash: 25a7598bdea862046f6a17c6d6e4efda17541f63
-    subject: Optimize for SDK browser build
-  - author: Pagan Gazzard
-    body: ""
-    hash: 62cde8f7725f9195128c0d4418631f3c8442e1fb
-    subject: Switch to using the standardised resin-lint module for linting.
-  date: "2016-10-03T22:13:24Z"
+    - author: Eugene Mirotin
+      body: |-
+        update dev dependencies
+        use granular lodash imports
+        update node test versions
+      hash: 25a7598bdea862046f6a17c6d6e4efda17541f63
+      subject: Optimize for SDK browser build
+    - author: Pagan Gazzard
+      body: ''
+      hash: 62cde8f7725f9195128c0d4418631f3c8442e1fb
+      subject: Switch to using the standardised resin-lint module for linting.
+  date: '2016-10-03T22:13:24Z'
   version: 2.1.1
