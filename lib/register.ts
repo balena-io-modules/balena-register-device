@@ -74,9 +74,13 @@ export const getRegisterDevice = ({
 	 * @param {Number} options.applicationId - application id
 	 * @param {String} options.uuid - device uuid
 	 * @param {String} options.deviceType - device type
-	 * @param {String} options.deviceApiKey - api key to create for the device
+	 * @param {String} [options.deviceApiKey] - api key to create for the device
 	 * @param {String} options.provisioningApiKey - provisioning api key
 	 * @param {String} options.apiEndpoint - api endpoint
+	 * @param {String} [options.supervisorVersion] - supervisor version of the device
+	 * @param {String} [options.osVersion] - os version of the device
+	 * @param {String} [options.osVariant] - os variant of the device
+	 * @param {String} [options.macAddress] - mac address of the device
 	 *
 	 * @example
 	 * deviceRegister.register
@@ -98,6 +102,10 @@ export const getRegisterDevice = ({
 		deviceApiKey?: string;
 		provisioningApiKey: string;
 		apiEndpoint: string;
+		supervisorVersion?: string;
+		osVersion?: string;
+		osVariant?: string;
+		macAddress?: string;
 	}) {
 		for (const opt of [
 			'applicationId',
@@ -127,6 +135,10 @@ export const getRegisterDevice = ({
 				uuid: options.uuid,
 				device_type: options.deviceType,
 				api_key: options.deviceApiKey,
+				supervisor_version: options.supervisorVersion,
+				os_version: options.osVersion,
+				os_variant: options.osVariant,
+				mac_address: options.macAddress,
 			},
 		});
 		if (response.statusCode !== 201) {
