@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v7.2.0
+## (2021-04-29)
+
+* Support `supervisorVersion`/`osVersion`/`osVariant`/`macAddress` fields [Pagan Gazzard]
+
 # v7.1.1
 ## (2021-04-29)
 

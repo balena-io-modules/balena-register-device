@@ -1,4 +1,14 @@
 - commits:
+    - subject: Support `supervisorVersion`/`osVersion`/`osVariant`/`macAddress` fields
+      hash: 6f10fe77ba11ec57bb012777975423dda498a8bd
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Pagan Gazzard
+  version: 7.2.0
+  date: 2021-04-29T12:35:30.543Z
+- commits:
     - subject: Update dependencies
       hash: 8d78459d6cf6e0dcaa4721c38898eeb2d25c5674
       body: ''
