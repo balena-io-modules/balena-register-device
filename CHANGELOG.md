@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v7.1.1
+## (2021-04-29)
+
+* Update dependencies [Pagan Gazzard]
+
 # v7.1.0
 ## (2020-07-13)
 

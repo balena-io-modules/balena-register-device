@@ -1,4 +1,14 @@
 - commits:
+    - subject: Update dependencies
+      hash: 8d78459d6cf6e0dcaa4721c38898eeb2d25c5674
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+  version: 7.1.1
+  date: 2021-04-29T12:23:50.655Z
+- commits:
     - subject: Switch from randomstring to uuid for generating device uuids
       hash: 596a76abcf0a76aef93d191e4c59b939701c80b8
       body: ''
