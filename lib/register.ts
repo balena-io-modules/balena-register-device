@@ -140,6 +140,8 @@ export const getRegisterDevice = ({
 				os_variant: options.osVariant,
 				mac_address: options.macAddress,
 			},
+		}).catch(e => {
+			throw new Error(`Device register request.send failed ${e}`);
 		});
 		if (response.statusCode !== 201) {
 			throw new ApiError(response.body, response);
