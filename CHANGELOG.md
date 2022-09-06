@@ -5,6 +5,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+# v8.0.0
+## (2022-09-06)
+
+* Remove the travis & appveyor configurations [Thodoris Greasidis]
+* tsconfig: Enable strict type checking [Thodoris Greasidis]
+* Update devDependencies [Thodoris Greasidis]
+* Update the uuid package to v9 [Thodoris Greasidis]
+* Prevent creating a package-lock.json [Thodoris Greasidis]
+* Drop support for node 10 in favor of 14 & 16 [Thodoris Greasidis]
+
 # v7.2.0
 ## (2021-04-29)
 
