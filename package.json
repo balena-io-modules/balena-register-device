@@ -11,6 +11,10 @@
   "files": [
     "build/"
   ],
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
   "keywords": [
     "resin",
     "balena",
