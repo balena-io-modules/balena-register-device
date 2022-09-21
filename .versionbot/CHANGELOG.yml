@@ -1,4 +1,16 @@
 - commits:
+    - subject: Replace balenaCI with flowzone
+      hash: 46d418473255582c2f0448fe4b2557404b67020b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 8.0.1
+  title: ""
+  date: 2022-09-21T21:07:29.233Z
+- commits:
     - subject: Remove the travis & appveyor configurations
       hash: 32c19504ca79ec134b34e30a4e6a52157a7b0bd6
       body: ""

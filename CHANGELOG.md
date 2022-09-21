@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 8.0.1 - 2022-09-21
+
+* Replace balenaCI with flowzone [Thodoris Greasidis]
+
 # v8.0.0
 ## (2022-09-06)
 
