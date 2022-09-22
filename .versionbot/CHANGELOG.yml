@@ -1,4 +1,42 @@
 - commits:
+    - subject: Fix key uniqueness check
+      hash: 68d2fd7df55a0bec364d3c24ef1b40369adf18f3
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Convert the tests to TypeScript
+      hash: a680d0873785ae735b98b2966da8f485c369a5fa
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Fix karma browser tests in node 18
+      hash: a63726c1e5299d164c13b6237d1d637b8912c171
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Specify the supported node engines in the package.json
+      hash: f799b5647dcfaa26b4ab2f2d0094b575761907db
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 8.0.2
+  title: ""
+  date: 2022-09-22T10:01:35.643Z
+- commits:
     - subject: Replace balenaCI with flowzone
       hash: 46d418473255582c2f0448fe4b2557404b67020b
       body: ""

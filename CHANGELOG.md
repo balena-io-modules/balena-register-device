@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 8.0.2 - 2022-09-22
+
+* Fix key uniqueness check [Thodoris Greasidis]
+* Convert the tests to TypeScript [Thodoris Greasidis]
+* Fix karma browser tests in node 18 [Thodoris Greasidis]
+* Specify the supported node engines in the package.json [Thodoris Greasidis]
+
 ## 8.0.1 - 2022-09-21
 
 * Replace balenaCI with flowzone [Thodoris Greasidis]
