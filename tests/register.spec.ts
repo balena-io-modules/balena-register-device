@@ -22,7 +22,7 @@ describe('Device Register:', function () {
 		});
 
 		it('should generate different unique key each time', function () {
-			const uniqueKeys = _.times(3, register.generateUUID);
+			const uniqueKeys = _.times(3, register.generateUniqueKey);
 			expect(uniqueKeys[0]).to.not.equal(uniqueKeys[1]);
 			expect(uniqueKeys[0]).to.not.equal(uniqueKeys[2]);
 			expect(uniqueKeys[1]).to.not.equal(uniqueKeys[2]);
