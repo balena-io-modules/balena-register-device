@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix overriding the whole webpack resolve section of karma tests
+      hash: 959081c4bf2174af43f6d4538d4a64c8cd5130e6
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 8.0.3
+  title: ""
+  date: 2022-09-22T22:04:11.821Z
+- commits:
     - subject: Fix key uniqueness check
       hash: 68d2fd7df55a0bec364d3c24ef1b40369adf18f3
       body: ""

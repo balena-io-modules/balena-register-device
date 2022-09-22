@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 8.0.3 - 2022-09-22
+
+* Fix overriding the whole webpack resolve section of karma tests [Thodoris Greasidis]
+
 ## 8.0.2 - 2022-09-22
 
 * Fix key uniqueness check [Thodoris Greasidis]
