@@ -1,13 +1,16 @@
-const _ = require('lodash');
-const chai = require('chai');
-const { expect } = chai;
-chai.use(require('chai-as-promised'));
-const errors = require('balena-errors');
-const { getRequest } = require('balena-request');
-const mockServer = require('mockttp').getLocal();
+import * as _ from 'lodash';
+import * as chai from 'chai';
+import { expect } from 'chai';
+import * as chaiAsPromised from 'chai-as-promised';
+import * as errors from 'balena-errors';
+import { getRequest } from 'balena-request';
+import * as mockttp from 'mockttp';
+chai.use(chaiAsPromised);
 
+const mockServer = mockttp.getLocal();
 const request = getRequest({});
-const register = require('../build/register').getRegisterDevice({ request });
+import {getRegisterDevice} from '../build/register';
+const register = getRegisterDevice({ request });
 
 const PROVISIONING_KEY = 'abcd';
 
@@ -35,7 +38,7 @@ describe('Device Register:', function () {
 							`No or incorrect authorization header: ${req.headers.authorization}`,
 						);
 					}
-					const { user } = JSON.parse(req.body.text);
+					const { user } = JSON.parse(req.body.text!);
 					switch (user) {
 						case 1:
 							return {
@@ -73,7 +76,7 @@ describe('Device Register:', function () {
 					.then(() => {
 						throw new Error('Succeeded');
 					})
-					.catch(function (error) {
+					.catch(function (error: Error) {
 						expect(error).to.be.instanceof(errors.BalenaRequestError);
 						expect(error).to.have.a.property(
 							'message',
