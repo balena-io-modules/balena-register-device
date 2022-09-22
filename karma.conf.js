@@ -6,17 +6,15 @@ module.exports = (config) => {
 	karmaConfig.logLevel = config.LOG_INFO;
 	// polyfill required for mockttp & balena-request
 	// the next major might not require them any more
-	karmaConfig.webpack.resolve = {
-		fallback: {
-			assert: false,
-			crypto: false,
-			fs: false,
-			path: false,
-			stream: require.resolve('stream-browserify'),
-			url: false,
-			util: false,
-			zlib: require.resolve('browserify-zlib'),
-		},
+	karmaConfig.webpack.resolve.fallback = {
+		assert: false,
+		crypto: false,
+		fs: false,
+		path: false,
+		stream: require.resolve('stream-browserify'),
+		url: false,
+		util: false,
+		zlib: require.resolve('browserify-zlib'),
 	};
 	karmaConfig.webpack.plugins = [
 		new getKarmaConfig.webpack.ProvidePlugin({
