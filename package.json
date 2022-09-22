@@ -40,14 +40,20 @@
   "devDependencies": {
     "@balena/lint": "^5.4.1",
     "balena-auth": "^4.1.0",
-    "balena-config-karma": "^3.0.0",
+    "balena-config-karma": "4.0.0-webpack5-fb4e02e7f32a53a44ac36a2d41868007321fedff",
     "balena-request": "^11.4.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^5.7.1",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "karma": "^5.0.9",
     "lodash": "^4.17.21",
-    "mocha": "^7.2.0",
-    "mockttp": "^0.8.1"
+    "mocha": "^10.0.0",
+    "mockttp": "^2.7.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
   },
   "dependencies": {
     "@types/uuid": "^8.3.0",
