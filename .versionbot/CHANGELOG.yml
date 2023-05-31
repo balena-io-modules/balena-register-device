@@ -1,4 +1,26 @@
 - commits:
+    - subject: Update minimum node version to v14
+      hash: 01aa0cbf2bfa2b1f59382ef7cba01dece6af9c34
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Update flowzone.yml
+      hash: a92f811164ff48406e75808861535afc296a2d64
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+  version: 8.0.5
+  title: ""
+  date: 2023-05-31T16:03:06.926Z
+- commits:
     - subject: Delete redundant .resinci.yml
       hash: f579dbadf36207a93fe0acee2744331767501c1e
       body: ""

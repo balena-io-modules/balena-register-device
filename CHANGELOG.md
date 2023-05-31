@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 8.0.5 - 2023-05-31
+
+* Update minimum node version to v14 [Kyle Harding]
+* Update flowzone.yml [Kyle Harding]
+
 ## 8.0.4 - 2022-09-26
 
 * Delete redundant .resinci.yml [Thodoris Greasidis]
