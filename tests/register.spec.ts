@@ -32,13 +32,13 @@ describe('Device Register:', function () {
 	describe('.register()', function () {
 		before(() =>
 			mockServer.start().then(() =>
-				mockServer.post('/device/register').thenCallback(function (req) {
+				mockServer.forPost('/device/register').thenCallback(async function (req) {
 					if (req.headers.authorization !== `Bearer ${PROVISIONING_KEY}`) {
 						throw new Error(
 							`No or incorrect authorization header: ${req.headers.authorization}`,
 						);
 					}
-					const { user } = JSON.parse(req.body.text!);
+					const { user } = JSON.parse((await req.body.getText())!);
 					switch (user) {
 						case 1:
 							return {
