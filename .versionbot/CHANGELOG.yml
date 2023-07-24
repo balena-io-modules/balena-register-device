@@ -1,4 +1,26 @@
 - commits:
+    - subject: Update balena-auth to 5.0.0 & balena-request to 12.0.1
+      hash: 0cbde101fd76beeda28e2897be8414669fd1a333
+      body: |
+        Update balena-auth from 4.1.0 to 5.0.0
+        Update balena-request from 11.0.0 to 12.0.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Use typescript via a devDependency rather than npx
+      hash: 63faf0ae8950db903b36dbef2c0d687411539067
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 8.0.7
+  title: ""
+  date: 2023-07-24T15:16:13.399Z
+- commits:
     - subject: Update mockttp to 3.8.0
       hash: a8816b518f38fad92d7565508b5f5760ff874e26
       body: ""

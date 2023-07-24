@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 8.0.7 - 2023-07-24
+
+* Update balena-auth to 5.0.0 & balena-request to 12.0.1 [Thodoris Greasidis]
+* Use typescript via a devDependency rather than npx [Thodoris Greasidis]
+
 ## 8.0.6 - 2023-07-24
 
 * Update mockttp to 3.8.0 [Thodoris Greasidis]
