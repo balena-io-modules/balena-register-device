@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update mockttp to 3.8.0
+      hash: a8816b518f38fad92d7565508b5f5760ff874e26
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 8.0.6
+  title: ""
+  date: 2023-07-24T15:09:54.853Z
+- commits:
     - subject: Update minimum node version to v14
       hash: 01aa0cbf2bfa2b1f59382ef7cba01dece6af9c34
       body: ""

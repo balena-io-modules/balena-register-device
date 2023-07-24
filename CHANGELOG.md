@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 8.0.6 - 2023-07-24
+
+* Update mockttp to 3.8.0 [Thodoris Greasidis]
+
 ## 8.0.5 - 2023-05-31
 
 * Update minimum node version to v14 [Kyle Harding]
