@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.1 - 2023-10-11
+
+* Fix balena-request peer dependency [Otávio Jacobi]
+
 ## 9.0.0 - 2023-10-11
 
 * Drop supoport for node 14 & 16 [Otávio Jacobi]

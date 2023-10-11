@@ -1,6 +1,6 @@
 {
   "name": "balena-register-device",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "Balena device registration utilities",
   "main": "build/register.js",
   "homepage": "https://github.com/balena-io-modules/balena-register-device",
@@ -72,6 +72,6 @@
     "balena-request": "^13.0.0"
   },
   "versionist": {
-    "publishedAt": "2023-10-11T18:16:48.058Z"
+    "publishedAt": "2023-10-11T18:27:19.100Z"
   }
 }
