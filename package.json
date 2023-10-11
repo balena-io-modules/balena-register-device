@@ -69,7 +69,7 @@
     "uuid": "^9.0.0"
   },
   "peerDependencies": {
-    "balena-request": "^12.0.1"
+    "balena-request": "^13.0.0"
   },
   "versionist": {
     "publishedAt": "2023-10-11T18:16:48.058Z"
