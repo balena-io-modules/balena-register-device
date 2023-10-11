@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.0 - 2023-10-11
+
+* Drop supoport for node 14 & 16 [Otávio Jacobi]
+
 ## 8.0.7 - 2023-07-24
 
 * Update balena-auth to 5.0.0 & balena-request to 12.0.1 [Thodoris Greasidis]

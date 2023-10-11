@@ -1,4 +1,16 @@
 - commits:
+    - subject: Drop supoport for node 14 & 16
+      hash: cc8ad72abb414347545498f6eceab01b2fcba71a
+      body: Update balena-request from 12.0.1 to 13.0.0
+      footer:
+        Change-type: major
+        change-type: major
+      author: Otávio Jacobi
+      nested: []
+  version: 9.0.0
+  title: ""
+  date: 2023-10-11T18:16:47.892Z
+- commits:
     - subject: Update balena-auth to 5.0.0 & balena-request to 12.0.1
       hash: 0cbde101fd76beeda28e2897be8414669fd1a333
       body: |
