@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.2 - 2024-02-23
+
+* Update @balena/lint to v7 [Thodoris Greasidis]
+* Update balena-request to 13.3.0 [Thodoris Greasidis]
+
 ## 9.0.1 - 2023-10-11
 
 * Fix balena-request peer dependency [Otávio Jacobi]

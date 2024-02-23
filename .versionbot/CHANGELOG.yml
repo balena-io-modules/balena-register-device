@@ -1,4 +1,25 @@
 - commits:
+    - subject: Update @balena/lint to v7
+      hash: 9613c8e65e75470358ed4a435356d8856e371546
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Update balena-request to 13.3.0
+      hash: 08093a1c040ae5af58233b0529ce76b7e6246f5e
+      body: |
+        Update balena-request from 13.0.0 to 13.3.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 9.0.2
+  title: ""
+  date: 2024-02-23T11:25:44.648Z
+- commits:
     - subject: Fix balena-request peer dependency
       hash: 21589a43eea60bf5e601d51bcab7b483e571fe53
       body: ""
