@@ -45,7 +45,7 @@
     "@types/mocha": "^9.1.1",
     "balena-auth": "^5.0.0",
     "balena-config-karma": "4.0.0",
-    "balena-request": "^13.0.0",
+    "balena-request": "13.2.1-build-only-throws-expired-when-really-expired-7c125fb699e677d770fa0f313b4e7187b3ed126a-1",
     "browserify-zlib": "^0.2.0",
     "buffer": "^5.7.1",
     "chai": "^4.3.4",
@@ -69,7 +69,7 @@
     "uuid": "^9.0.0"
   },
   "peerDependencies": {
-    "balena-request": "^13.0.0"
+    "balena-request": "13.2.1-build-only-throws-expired-when-really-expired-7c125fb699e677d770fa0f313b4e7187b3ed126a-1"
   },
   "versionist": {
     "publishedAt": "2023-10-11T18:27:19.100Z"
