@@ -9,7 +9,7 @@ chai.use(chaiAsPromised);
 
 const mockServer = mockttp.getLocal();
 const request = getRequest({});
-import {getRegisterDevice} from '../build/register';
+import { getRegisterDevice } from '../build/register';
 const register = getRegisterDevice({ request });
 
 const PROVISIONING_KEY = 'abcd';
@@ -32,30 +32,32 @@ describe('Device Register:', function () {
 	describe('.register()', function () {
 		before(() =>
 			mockServer.start().then(() =>
-				mockServer.forPost('/device/register').thenCallback(async function (req) {
-					if (req.headers.authorization !== `Bearer ${PROVISIONING_KEY}`) {
-						throw new Error(
-							`No or incorrect authorization header: ${req.headers.authorization}`,
-						);
-					}
-					const { user } = JSON.parse((await req.body.getText())!);
-					switch (user) {
-						case 1:
-							return {
-								status: 401,
-								body: 'Unauthorized',
-							};
-						case 2:
-							return {
-								status: 201,
-								json: {
-									id: 999,
-								},
-							};
-						default:
-							throw new Error(`Unrecognised user for mocking '${user}'`);
-					}
-				}),
+				mockServer
+					.forPost('/device/register')
+					.thenCallback(async function (req) {
+						if (req.headers.authorization !== `Bearer ${PROVISIONING_KEY}`) {
+							throw new Error(
+								`No or incorrect authorization header: ${req.headers.authorization}`,
+							);
+						}
+						const { user } = JSON.parse((await req.body.getText())!);
+						switch (user) {
+							case 1:
+								return {
+									status: 401,
+									body: 'Unauthorized',
+								};
+							case 2:
+								return {
+									status: 201,
+									json: {
+										id: 999,
+									},
+								};
+							default:
+								throw new Error(`Unrecognised user for mocking '${user}'`);
+						}
+					}),
 			),
 		);
 
