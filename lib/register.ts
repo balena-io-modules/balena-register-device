@@ -61,7 +61,7 @@ export const getRegisterDevice = ({
 	 * console.log(randomKey)
 	 */
 	generateUniqueKey() {
-		return uuidv4().replace(/\-/g, '');
+		return uuidv4().replace(/-/g, '');
 	},
 
 	/**
