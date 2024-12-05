@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fix peerDependency version format
+      hash: 7275832473f24863663b7aad760134971c7fd254
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 9.0.4
+  title: ""
+  date: 2024-12-05T18:58:16.113Z
+- commits:
     - subject: Add balena-request 14.x as a valid peer dependency
       hash: 613d2a5ec1c1d4a652baf1ce2e55fd1cb111d7ac
       body: ""

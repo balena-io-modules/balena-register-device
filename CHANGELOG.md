@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.4 - 2024-12-05
+
+* Fix peerDependency version format [Pagan Gazzard]
+
 ## 9.0.3 - 2024-12-04
 
 * Add balena-request 14.x as a valid peer dependency [Pagan Gazzard]
