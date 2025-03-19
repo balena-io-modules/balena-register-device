@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.5 - 2025-03-19
+
+* Update dependency balena-config-karma to v4.0.2 [balena-renovate[bot]]
+
 ## 9.0.4 - 2024-12-05
 
 * Fix peerDependency version format [Pagan Gazzard]

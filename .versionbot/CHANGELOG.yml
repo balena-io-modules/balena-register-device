@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency balena-config-karma to v4.0.2
+      hash: bb1c75d13203dccf9b981d8dbdf7b11699964d48
+      body: |
+        Update balena-config-karma from 4.0.0 to 4.0.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.5
+  title: ""
+  date: 2025-03-19T15:56:03.806Z
+- commits:
     - subject: Fix peerDependency version format
       hash: 7275832473f24863663b7aad760134971c7fd254
       body: ""
