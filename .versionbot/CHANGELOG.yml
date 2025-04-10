@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency karma to v6 [SECURITY]
+      hash: c13769fa1bec5cf372c79a59f89912ad67b34b90
+      body: |
+        Update karma from 5.2.3 to 6.4.4
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.6
+  title: ""
+  date: 2025-04-10T14:13:40.987Z
+- commits:
     - subject: Update dependency balena-config-karma to v4.0.2
       hash: bb1c75d13203dccf9b981d8dbdf7b11699964d48
       body: |
