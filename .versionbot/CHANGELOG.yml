@@ -1,4 +1,16 @@
 - commits:
+    - subject: "Tests: remove use of chai-as-promised"
+      hash: 6361987a4367a34c9864c04107a82ee042b80ffc
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 9.0.7
+  title: ""
+  date: 2025-04-10T23:48:56.757Z
+- commits:
     - subject: Update dependency karma to v6 [SECURITY]
       hash: c13769fa1bec5cf372c79a59f89912ad67b34b90
       body: |

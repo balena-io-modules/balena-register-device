@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.7 - 2025-04-10
+
+* Tests: remove use of chai-as-promised [Pagan Gazzard]
+
 ## 9.0.6 - 2025-04-10
 
 * Update dependency karma to v6 [SECURITY] [balena-renovate[bot]]
