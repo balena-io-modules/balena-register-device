@@ -1,11 +1,8 @@
 import * as _ from 'lodash';
-import * as chai from 'chai';
 import { expect } from 'chai';
-import * as chaiAsPromised from 'chai-as-promised';
 import * as errors from 'balena-errors';
 import { getRequest } from 'balena-request';
 import * as mockttp from 'mockttp';
-chai.use(chaiAsPromised);
 
 const mockServer = mockttp.getLocal();
 const request = getRequest({});
@@ -87,21 +84,24 @@ describe('Device Register:', function () {
 					});
 			});
 
-			it('should return a rejected promise', function () {
-				const promise = register.register({
-					userId: 1,
-					applicationId: 10350,
-					uuid: register.generateUniqueKey(),
-					deviceType: 'raspberry-pi',
-					deviceApiKey: register.generateUniqueKey(),
-					provisioningApiKey: PROVISIONING_KEY,
-					apiEndpoint: mockServer.url,
-				});
-
-				return expect(promise).to.eventually.be.rejectedWith(
-					Error,
-					'Unauthorized',
-				);
+			it('should return a rejected promise', async function () {
+				let err;
+				try {
+					await register.register({
+						userId: 1,
+						applicationId: 10350,
+						uuid: register.generateUniqueKey(),
+						deviceType: 'raspberry-pi',
+						deviceApiKey: register.generateUniqueKey(),
+						provisioningApiKey: PROVISIONING_KEY,
+						apiEndpoint: mockServer.url,
+					});
+				} catch ($err) {
+					err = $err;
+				}
+				expect(err)
+					.to.be.an.instanceOf(Error)
+					.with.property('message', 'Request error: Unauthorized');
 			});
 		});
 
@@ -124,8 +124,8 @@ describe('Device Register:', function () {
 					});
 			});
 
-			it('should return a promise that resolves to the device info', function () {
-				const promise = register.register({
+			it('should return a promise that resolves to the device info', async function () {
+				const result = await register.register({
 					userId: 2,
 					applicationId: 10350,
 					uuid: register.generateUniqueKey(),
@@ -135,7 +135,7 @@ describe('Device Register:', function () {
 					apiEndpoint: mockServer.url,
 				});
 
-				return expect(promise).to.eventually.deep.equal({ id: 999 });
+				return expect(result).to.deep.equal({ id: 999 });
 			});
 		});
 	});
