@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency buffer to v6
+      hash: 5756a9006a380c6580710ea8fd9fe688eb629a7b
+      body: |
+        Update buffer from 5.7.1 to 6.0.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.9
+  title: ""
+  date: 2025-11-11T18:07:05.977Z
+- commits:
     - subject: Update uuid to v11
       hash: 217a6319820996afbda09866e94519dd7b5b3746
       body: |
