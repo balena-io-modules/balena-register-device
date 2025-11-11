@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @balena/lint to v9
+      hash: b657d505c7be30d59e386de1ecbf68aea5846fac
+      body: |
+        Update @balena/lint from 7.3.0 to 9.1.6
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.10
+  title: ""
+  date: 2025-11-11T18:14:26.738Z
+- commits:
     - subject: Update dependency buffer to v6
       hash: 5756a9006a380c6580710ea8fd9fe688eb629a7b
       body: |
