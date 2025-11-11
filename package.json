@@ -47,7 +47,7 @@
     "balena-config-karma": "4.0.2",
     "balena-request": "^14.0.0",
     "browserify-zlib": "^0.2.0",
-    "buffer": "^5.7.1",
+    "buffer": "^6.0.0",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "karma": "^6.0.0",
