@@ -42,7 +42,7 @@
     "@types/chai": "^4.3.0",
     "@types/chai-as-promised": "^7.1.4",
     "@types/lodash": "^4.14.182",
-    "@types/mocha": "^9.1.1",
+    "@types/mocha": "^10.0.0",
     "balena-auth": "^6.0.1",
     "balena-config-karma": "4.0.2",
     "balena-request": "^14.0.0",
