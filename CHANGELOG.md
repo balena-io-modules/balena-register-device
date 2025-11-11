@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.11 - 2025-11-11
+
+* Update dependency @types/mocha to v10 [balena-renovate[bot]]
+
 ## 9.0.10 - 2025-11-11
 
 * Update dependency @balena/lint to v9 [balena-renovate[bot]]
