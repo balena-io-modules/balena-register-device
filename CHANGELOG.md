@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.8 - 2025-11-11
+
+* Update uuid to v11 [balena-renovate[bot]]
+
 ## 9.0.7 - 2025-04-10
 
 * Tests: remove use of chai-as-promised [Pagan Gazzard]
