@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency uuid to v13
+      hash: 367a6ea7d786d9ca3626e6d60e26b9f3625cb6cb
+      body: |
+        Update uuid from 11.1.0 to 13.0.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.13
+  title: ""
+  date: 2025-11-13T23:16:45.482Z
+- commits:
     - subject: Update dependency mocha to v11
       hash: 5df3c840397857a219571fc7f20f7140038ce91b
       body: |

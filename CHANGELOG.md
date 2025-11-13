@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.13 - 2025-11-13
+
+* Update dependency uuid to v13 [balena-renovate[bot]]
+
 ## 9.0.12 - 2025-11-11
 
 * Update dependency mocha to v11 [balena-renovate[bot]]
