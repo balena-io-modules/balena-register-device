@@ -63,7 +63,6 @@
     "util": "^0.12.4"
   },
   "dependencies": {
-    "@types/uuid": "^11.0.0",
     "tslib": "^2.2.0",
     "typed-error": "^3.2.1",
     "uuid": "^13.0.0"
