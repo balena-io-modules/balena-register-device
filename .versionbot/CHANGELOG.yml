@@ -1,4 +1,16 @@
 - commits:
+    - subject: Remove stub `@types/uuid` dependency
+      hash: 9f1fc0290ff40c9364d2e999725f542d95c1cd66
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 9.0.14
+  title: ""
+  date: 2025-11-24T15:55:44.915Z
+- commits:
     - subject: Update dependency uuid to v13
       hash: 367a6ea7d786d9ca3626e6d60e26b9f3625cb6cb
       body: |

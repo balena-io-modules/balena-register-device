@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.14 - 2025-11-24
+
+* Remove stub `@types/uuid` dependency [Pagan Gazzard]
+
 ## 9.0.13 - 2025-11-13
 
 * Update dependency uuid to v13 [balena-renovate[bot]]
