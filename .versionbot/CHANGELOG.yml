@@ -1,4 +1,18 @@
 - commits:
+    - subject: "Add id-token: write permission for NPM OIDC publishing"
+      hash: c2d2a30df67c674ea6f6cc8548efaf29a9c69da9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 9.0.15
+  title: ""
+  date: 2026-02-19T02:00:23.878Z
+- commits:
     - subject: Remove stub `@types/uuid` dependency
       hash: 9f1fc0290ff40c9364d2e999725f542d95c1cd66
       body: ""
