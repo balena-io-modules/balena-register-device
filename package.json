@@ -44,7 +44,7 @@
     "@types/lodash": "^4.14.182",
     "@types/mocha": "^10.0.0",
     "balena-auth": "^6.0.1",
-    "balena-config-karma": "4.0.2",
+    "balena-config-karma": "4.0.3",
     "balena-request": "^14.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.0",
