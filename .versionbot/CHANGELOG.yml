@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency balena-config-karma to v4.0.3
+      hash: 2c00ec989886848fb34f04ddea64d57071c5c906
+      body: |
+        Update balena-config-karma from 4.0.2 to 4.0.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.16
+  title: ""
+  date: 2026-02-22T02:41:52.607Z
+- commits:
     - subject: "Add id-token: write permission for NPM OIDC publishing"
       hash: c2d2a30df67c674ea6f6cc8548efaf29a9c69da9
       body: ""

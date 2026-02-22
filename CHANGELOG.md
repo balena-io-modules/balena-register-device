@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.16 - 2026-02-22
+
+* Update dependency balena-config-karma to v4.0.3 [balena-renovate[bot]]
+
 ## 9.0.15 - 2026-02-19
 
 * Add id-token: write permission for NPM OIDC publishing [Kyle Harding]
