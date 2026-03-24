@@ -1,4 +1,17 @@
 - commits:
+    - subject: Pin product-os/flowzone action to a53cf4b
+      hash: 4ca54621cad790381e3181f72e618bc5928dffa4
+      body: |
+        Update product-os/flowzone
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.17
+  title: ""
+  date: 2026-03-24T18:11:34.867Z
+- commits:
     - subject: Update dependency balena-config-karma to v4.0.3
       hash: 2c00ec989886848fb34f04ddea64d57071c5c906
       body: |
