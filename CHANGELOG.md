@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.29 - 2026-03-26
+
+* Update product-os/flowzone digest to 7b49c1e [balena-renovate[bot]]
+
 ## 9.0.28 - 2026-03-26
 
 * Update product-os/flowzone digest to 8d926e2 [balena-renovate[bot]]
