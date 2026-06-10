@@ -1,4 +1,17 @@
 - commits:
+    - subject: Pin dependencies
+      hash: 4b525f35af62aa32cd58db4e67ab1fb22eed5b60
+      body: |
+        Update @types/chai
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.33
+  title: ""
+  date: 2026-06-10T14:03:45.727Z
+- commits:
     - subject: Revert flowzone pinning to master
       hash: 2d2ee80c167ac1d32b59a9df6b4ff33ca2fcdb55
       body: ""
