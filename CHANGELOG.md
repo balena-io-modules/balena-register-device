@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.40 - 2026-10-15
+
+* Update dependency mockttp to v3.17.2 [balena-renovate[bot]]
+
 ## 9.0.39 - 2026-10-15
 
 * Update dependency mocha to v12 [balena-renovate[bot]]

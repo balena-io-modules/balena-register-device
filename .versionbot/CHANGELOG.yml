@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency mockttp to v3.17.2
+      hash: 198291252cb079d10717cb85fe7f62cdbe4fa5db
+      body: |
+        Update mockttp from 3.17.1 to 3.17.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.40
+  title: ""
+  date: 2026-10-15T19:02:36.478Z
+- commits:
     - subject: Update dependency mocha to v12
       hash: d3efeecf56536a6b73e59821e48c8c5168e64123
       body: |
