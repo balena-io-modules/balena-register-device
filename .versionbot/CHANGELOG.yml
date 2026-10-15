@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency flowzonify to v0.4.19
+      hash: 0beb676a5969d65279b9029e0a0c3ff7b643c84b
+      body: |
+        Update flowzonify from 0.0.0 to 0.4.19
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.37
+  title: ""
+  date: 2026-10-15T16:22:44.112Z
+- commits:
     - subject: Convert README.md to utf8 to fix publishing
       hash: d2cc9b5b36f38ab485eb67f867a9c81f613d299b
       body: ""

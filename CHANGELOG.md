@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.37 - 2026-10-15
+
+* Update dependency flowzonify to v0.4.19 [balena-renovate[bot]]
+
 ## 9.0.36 - 2026-10-15
 
 * Convert README.md to utf8 to fix publishing [Pagan Gazzard]
