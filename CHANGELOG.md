@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.36 - 2026-10-15
+
+* Convert README.md to utf8 to fix publishing [Pagan Gazzard]
+
 ## 9.0.35 - 2026-06-25
 
 * Update dependency chai-as-promised to v8 [balena-renovate[bot]]

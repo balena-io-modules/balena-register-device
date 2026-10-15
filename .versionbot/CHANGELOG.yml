@@ -1,4 +1,16 @@
 - commits:
+    - subject: Convert README.md to utf8 to fix publishing
+      hash: d2cc9b5b36f38ab485eb67f867a9c81f613d299b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 9.0.36
+  title: ""
+  date: 2026-10-15T16:11:02.993Z
+- commits:
     - subject: Update dependency chai-as-promised to v8
       hash: 5515ea018663d08db2b84460a9c9915e6c40d7b6
       body: |
