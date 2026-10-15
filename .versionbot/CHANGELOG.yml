@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/lodash to v4.17.26
+      hash: 0ccd0e8e62b78185cc679c8a8ab62026939d54dc
+      body: |
+        Update @types/lodash from 4.17.24 to 4.17.26
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.38
+  title: ""
+  date: 2026-10-15T17:03:05.590Z
+- commits:
     - subject: Update dependency flowzonify to v0.4.19
       hash: 0beb676a5969d65279b9029e0a0c3ff7b643c84b
       body: |
