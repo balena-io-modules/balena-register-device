@@ -38,7 +38,7 @@
   "author": "Juan Cruz Viotti <juan@resin.io>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@balena/lint": "^9.0.0",
+    "@balena/lint": "^11.0.0",
     "@types/chai": "5.2.3",
     "@types/chai-as-promised": "8.0.2",
     "@types/lodash": "4.17.26",
