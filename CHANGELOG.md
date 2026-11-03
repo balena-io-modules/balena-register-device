@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.41 - 2026-11-03
+
+* Update dependency @balena/lint to v11 [balena-renovate[bot]]
+
 ## 9.0.40 - 2026-10-15
 
 * Update dependency mockttp to v3.17.2 [balena-renovate[bot]]

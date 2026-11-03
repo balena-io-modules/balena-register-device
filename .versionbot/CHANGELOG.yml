@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @balena/lint to v11
+      hash: 6ae0ff572ff7707dc4031240e40bc62423927180
+      body: |
+        Update @balena/lint from 9.4.15 to 11.0.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.41
+  title: ""
+  date: 2026-11-03T01:05:57.803Z
+- commits:
     - subject: Update dependency mockttp to v3.17.2
       hash: 198291252cb079d10717cb85fe7f62cdbe4fa5db
       body: |
