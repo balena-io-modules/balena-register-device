@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.43 - 2026-11-07
+
+* Update dependency balena-request to v14.2.4 [balena-renovate[bot]]
+
 ## 9.0.42 - 2026-11-07
 
 * Update dependency @types/lodash to v4.17.27 [balena-renovate[bot]]

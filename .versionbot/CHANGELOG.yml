@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency balena-request to v14.2.4
+      hash: 2c425f55b9329b945e7fb515363697dafd2b79e2
+      body: |
+        Update balena-request from 14.2.3 to 14.2.4
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.43
+  title: ""
+  date: 2026-11-07T01:59:33.448Z
+- commits:
     - subject: Update dependency @types/lodash to v4.17.27
       hash: 9d8de6b9860b30e9ef85223e2ab131079041985f
       body: |
