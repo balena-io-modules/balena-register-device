@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.0] - 2018-01-25
 
+## 9.0.42 - 2026-11-07
+
+* Update dependency @types/lodash to v4.17.27 [balena-renovate[bot]]
+
 ## 9.0.41 - 2026-11-03
 
 * Update dependency @balena/lint to v11 [balena-renovate[bot]]

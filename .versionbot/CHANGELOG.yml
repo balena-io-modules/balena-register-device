@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @types/lodash to v4.17.27
+      hash: 9d8de6b9860b30e9ef85223e2ab131079041985f
+      body: |
+        Update @types/lodash from 4.17.26 to 4.17.27
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.42
+  title: ""
+  date: 2026-11-07T01:04:31.407Z
+- commits:
     - subject: Update dependency @balena/lint to v11
       hash: 6ae0ff572ff7707dc4031240e40bc62423927180
       body: |
